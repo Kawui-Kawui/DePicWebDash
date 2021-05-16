@@ -46,7 +46,7 @@ router.get("/Reglas", (req, res) => {
   });
 });
 router.get("/rgl1", (req, res) => {
-  res.render("./dash/dashser", {
+  res.render("./web/reglas/rgl1", {
     user: req.user,
     esta: true,
   });

@@ -9,7 +9,7 @@
       />
       {{servidor.name}}</h1>
     <h1 class="text-center">
-      <a href="#" class="text-center btn btn-success my-5" id="liveToastBtn">
+      <a href="#" class="text-center btn btn-success my-5" type="submit" id="liveToastBtn">
         Guardar cambios</a>
 
     </h1>
@@ -57,7 +57,7 @@
               width="60"
               height="60"
             />Sugerencias</h5>
-          <p class="card-text">Canal de sugerencias actual: {{su}}</p>
+          <p class="card-text">Canal de sugerencias actual: <b class="mentionChannel">@{{su}}</b></p>
           <!--form class="card-text" action="" method="post">
             <p>Introdusca la ID del canal</p>
             <input
@@ -84,7 +84,7 @@
               width="60"
               height="60"
             />Confenciones</h5>
-          <p class="card-text">Canal de confenciones actual: {{co}}</p>
+          <p class="card-text">Canal de confenciones actual: <b class="mentionChannel">@{{co}}</b></p>
           <!--form class="card-text" action="" method="post">
             <p>Introdusca la ID del canal</p>
             <input name="sugest" type="text" class="colorblack" />
@@ -104,7 +104,7 @@
               width="60"
               height="60"
             />Confenciones logs</h5>
-          <p class="card-text">Canal de logs de confenciones actual: {{col}}</p>
+          <p class="card-text">Canal de logs de confenciones actual: <b class="mentionChannel">@{{col}}</b></p>
           <!--form class="card-text" action="" method="post">
             <p>Introdusca la ID del canal o el nombre</p>
             <input type="text" class="colorblack" />
@@ -126,7 +126,7 @@
               width="60"
               height="60"
             />Bienvenidas</h5>
-          <p class="card-text">Canal de Bienvenidas actual: {{bi}}</p>
+          <p class="card-text">Canal de Bienvenidas actual: <b class="mentionChannel">@{{bi}}</b></p>
           <!--form class="card-text" action="" method="post">
             <p>Introdusca la ID del canal o el nombre</p>
             <input type="text" class="colorblack" />
@@ -145,7 +145,7 @@
               width="60"
               height="60"
             />Warns logs</h5>
-          <p class="card-text">Canal de Warns logs actual: {{wal}}</p>
+          <p class="card-text">Canal de Warns logs actual: <b class="mentionChannel">@{{wal}}</b></p>
           <!--form class="card-text" action="" method="post">
             <p>Introdusca la ID del canal o el nombre</p>
             <input type="text" class="colorblack" />
