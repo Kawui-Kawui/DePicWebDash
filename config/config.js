@@ -8,4 +8,3 @@ module.exports = {
   token: process.env.token,
   mongodb: process.env.mongo,
 };
-/*process.env.clientSecret*/
