@@ -9,12 +9,19 @@
       />
       {{servidor.name}}</h1>
     <h1 class="text-center">
-      <a href="#" class="text-center btn btn-success my-5" type="submit" id="liveToastBtn">
-        Guardar cambios</a>
-
     </h1>
+    
+  <div class="row flechas ">
+    <div class="col-sm-6">
+      <a href="/dash">
+      <i class="fas fa-chevron-left fa-2x flecha"></i>
+      </a>
+      <!--a href="">
+        <i class="fas fa-redo-alt fa-2x flecha" style="padding-right: 3px;"></i>
+      </a-->
   </div>
-
+</div>
+</div>
   <div class="row">
     <div class="col-sm-6">
       <div class="card">
@@ -41,7 +48,7 @@
               type="text"
               class="colorblack"
             />
-            <button class="btn btn-dark" type="submit">Cambiar</button>
+            <button class="btn btn-dark" type="submit"><i class="far fa-save"></i>Guardar</button>
           </form>
         </div>
       </div>
@@ -154,5 +161,24 @@
         </div>
       </div>
     </div>
+  <!--/div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><img
+              class="img23"
+              src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
+              alt=""
+              width="60"
+              height="60"
+            />Bienvenidas</h5>
+          <p class="card-text">Canal de Bienvenidas actual: <b class="mentionChannel">@{{bi}}</b></p>
+          <form class="card-text" action="/dash/{{servidor.id}}/bienve" method="post">
+            <!--p>Introdusca la ID del canal o el nombre</p>
+            <input type="text" class="colorblack" /->
+            <textarea name="bienvenidatext" type="text" cols="100" rows="10"></textarea>
+            <button class="btn btn-dark" type="submit">Cambiar</button>
+          </form>
+        </div>
+      </div-->
   </div>
 </div>

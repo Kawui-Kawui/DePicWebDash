@@ -296,3 +296,22 @@ textarea#texto {
   padding: 4px 4px;
   border-radius: 5px;
 }
+.mentionChannel:hover {
+  background-color: #515ddf;
+}
+.flechas {
+  margin-bottom: 10px;
+}
+.flecha {
+  padding: 0px 3px;
+  padding-right: 10px;
+  border-radius: 10px;
+  background-color: #101014;
+}
+.flecha:hover {
+  background-color: #1e1f26;
+  padding: 0px 3px;
+  padding-right: 10px;
+  padding: 0 3px;
+  border-radius: 10px;
+}

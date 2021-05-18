@@ -2,11 +2,10 @@ const { Router } = require("express");
 const passport = require("../server/passport");
 const { auth } = require("../util/middleware/auth");
 const router = Router();
-const Prefix = require("../util/models/prefix_db");
 const logsConfecion_db = require("../util/models/logsConfecion_db");
 const setSugerencia_db = require("../util/models/setSugerencia_db");
 const warn2_db = require("../util/models/warn2_db");
-const bienvenidas_db = require("../util/models/bienvenidas_db");
+const guildShcema = require("../util/models/guild_db");
 const setConfention_db = require("../util/models/setConfention_db");
 
 router.get("/", (req, res) => {
@@ -16,9 +15,15 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/login", passport.authenticate("discord"), (req, res) => {
-  res.redirect("/");
-});
+router.get(
+  "/login",
+  passport.authenticate("discord", {
+    failureRedirect: `/`,
+  }),
+  (req, res) => {
+    res.redirect("/");
+  }
+);
 
 router.get(
   "/tienda/discord/login",
@@ -169,18 +174,19 @@ router.get(`/dash/:id`, auth, async (req, res) => {
   let id = req.params.id;
   let servidor = req.BotClient.guilds.cache.get(id);
   let custom;
-  let data = await Prefix.findOne({ Guild: req.params.id }).catch((err) =>
-    console.log(err)
-  );
-  if (data) {
-    custom = data.Prefix;
+  let guildfinds = await guildShcema.findOne({ id: req.params.id });
+  if (guildfinds) {
+    if (guildfinds.prefix === null) {
+      custom = "&";
+    } else {
+      custom = guildfinds.Prefix;
+    }
   } else {
     custom = "&";
   }
   let suggest = await setSugerencia_db.findOne({ guild: req.params.id });
   let confection = await setConfention_db.findOne({ guild: req.params.id });
   let confectionL = await logsConfecion_db.findOne({ guild: req.params.id });
-  let Bienvenidas = await bienvenidas_db.findOne({ guild: req.params.id });
   let WarnsL = await warn2_db.findOne({ guild: req.params.id });
 
   let predef = "No hay canal";
@@ -189,7 +195,7 @@ router.get(`/dash/:id`, auth, async (req, res) => {
   let col;
   let bi;
   let wal;
-
+  let bit;
   if (suggest === null) {
     su = predef;
   } else {
@@ -204,19 +210,28 @@ router.get(`/dash/:id`, auth, async (req, res) => {
       .get(id)
       .channels.resolve(confection.ChannelID).name;
   }
+
+  if (guildfinds === null) {
+    bi = predef;
+  } else {
+    try {
+      if (guildfinds.bienv.id === null) {
+        bi = predef;
+      } else {
+        bi = req.BotClient.guilds.cache
+          .get(id)
+          .channels.resolve(guildfinds.bienv.id).name;
+      }
+    } catch (error) {
+      bi = predef;
+    }
+  }
   if (confectionL === null) {
     col = predef;
   } else {
     col = req.BotClient.guilds.cache
       .get(id)
       .channels.resolve(confectionL.ChannelID).name;
-  }
-  if (Bienvenidas === null) {
-    bi = predef;
-  } else {
-    bi = req.BotClient.guilds.cache
-      .get(id)
-      .channels.resolve(Bienvenidas.ChannelID).name;
   }
   if (WarnsL === null) {
     wal = predef;
@@ -225,12 +240,14 @@ router.get(`/dash/:id`, auth, async (req, res) => {
       .get(id)
       .channels.resolve(WarnsL.ChannelID).name;
   }
+
   res.render("../views/dash/serverDash/dashserver", {
     user: req.user,
     servidor,
     prefixMostrar: custom,
     su,
     bi,
+    bit,
     wal,
     col,
     co,
@@ -299,24 +316,56 @@ router.post("/dash/:id/prefix", async (req, res) => {
     Exito = 3; //"El prefix mide mucho, maximo 3";
   } else if (newPrefixPages.length < 3) {
     Exito = 2; //"Prefix cambiado correctamente!!";
-    let a = await Prefix.findOne({ Guild: req.params.id });
+    let a = await guildShcema.findOne({ id: req.params.id });
 
-    let sv = new Prefix({
-      Guild: req.params.id,
-      Prefix: newPrefixPages,
+    let sv = new guildShcema({
+      id: req.params.id,
+      prefix: newPrefixPages,
     });
 
     a
-      ? await Prefix.updateOne(
-          { Guild: req.params.id },
-          { Prefix: newPrefixPages }
+      ? await guildShcema.updateOne(
+          { id: req.params.id },
+          { prefix: newPrefixPages }
         )
       : await sv.save();
   } else {
     Exito = 1; //"Todavia no se cambia el prefix";
   }
 
-  res.redirect(`/dash/${id}`);
+  res.redirect(`/dash/${id}/${Exito}`);
+});
+
+/*router.post("/dash/:id/bienve", async (req, res) => {
+  let id = req.params.id;
+  let servidor = req.BotClient.guilds.cache.get(id);
+  var Exito = 10;
+  let newPrefixPages = req.body.bienvenidatext;
+
+  if (newPrefixPages.length === 0) {
+    Exito = 4;
+  } else if (newPrefixPages.length > 300) {
+    Exito = 3; //"El prefix mide mucho, maximo 3";
+  } else if (newPrefixPages.length < 1) {
+    Exito = 2; //"Prefix cambiado correctamente!!";
+    let a = await guildShcema.findOne({ id: req.params.id });
+
+    let sv = new Prefix({
+      id: req.params.id,
+      text: newPrefixPages,
+    });
+
+    a
+      ? await Prefix.updateOne({
+          id: req.params.id,
+          text: newPrefixPages,
+        })
+      : await sv.save();
+  } else {
+    Exito = 1; //"Todavia no se cambia el prefix";
+  }
+
+  res.redirect(`/dash/${id}/${Exito}`);
 });
 
 router.post("/dash/:id/sugest", async (req, res) => {
@@ -349,6 +398,92 @@ router.post("/dash/:id/sugest", async (req, res) => {
   }
 
   res.redirect(`/dash/${id}/${Exito}`);
+});*/
+
+router.get(`/dash/:id/:Exito`, auth, async (req, res) => {
+  let id = req.params.id;
+  let servidor = req.BotClient.guilds.cache.get(id);
+  let guildfinds = await guildShcema.findOne({ id: req.params.id });
+  let custom;
+  let data = await guildShcema
+    .findOne({ id: req.params.id })
+    .catch((err) => console.log(err));
+
+  if (data) {
+    custom = data.prefix;
+  } else {
+    custom = "&";
+  }
+  let suggest = await setSugerencia_db.findOne({ guild: req.params.id });
+  let confection = await setConfention_db.findOne({ guild: req.params.id });
+  let confectionL = await logsConfecion_db.findOne({ guild: req.params.id });
+  let Bienvenidas = await guildShcema.findOne({ id: req.params.id });
+  let WarnsL = await warn2_db.findOne({ guild: req.params.id });
+
+  let predef = "No hay canal";
+  let su;
+  let co;
+  let col;
+  let bi;
+  let wal;
+  let bit;
+
+  if (suggest === null) {
+    su = predef;
+  } else {
+    su = req.BotClient.guilds.cache
+      .get(id)
+      .channels.resolve(suggest.ChannelID).name;
+  }
+  if (confection === null) {
+    co = predef;
+  } else {
+    co = req.BotClient.guilds.cache
+      .get(id)
+      .channels.resolve(confection.ChannelID).name;
+  }
+
+  if (guildfinds === null) {
+    bi = predef;
+  } else {
+    try {
+      if (guildfinds.bienv.id === null) {
+        bi = predef;
+      } else {
+        bi = req.BotClient.guilds.cache
+          .get(id)
+          .channels.resolve(guildfinds.bienv.id).name;
+      }
+    } catch (error) {
+      bi = predef;
+    }
+  }
+  if (confectionL === null) {
+    col = predef;
+  } else {
+    col = req.BotClient.guilds.cache
+      .get(id)
+      .channels.resolve(confectionL.ChannelID).name;
+  }
+  if (WarnsL === null) {
+    wal = predef;
+  } else {
+    wal = req.BotClient.guilds.cache
+      .get(id)
+      .channels.resolve(WarnsL.ChannelID).name;
+  }
+
+  res.render("../views/dash/serverDash/dashserver", {
+    user: req.user,
+    servidor,
+    prefixMostrar: custom,
+    su,
+    bi,
+    bit,
+    wal,
+    col,
+    co,
+  });
 });
 
 module.exports = router;
