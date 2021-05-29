@@ -488,40 +488,44 @@ router.get(`/dash/:id/:Exito`, auth, async (req, res) => {
 });
 
 router.get("/perfil/:id", async (req, res) => {
-  let datauserfind = await setSugerencia_db.findOne({ id: req.user.id });
-  let datosSend;
-  let premiun;
-  let descrip;
-  let coins;
-  let emojis;
+  let datauserfind = await userdata.findOne({ id: req.params.id });
+  var datosSend;
+  var premiun;
+  var descrip;
+  var coins;
+  var emojis;
   if (userdata === null) {
     datosSend = "No hay datos";
+    let savenew = new userdata({
+      id: req.params.id,
+    });
   }
   if (!userdata) {
     datosSend = "No hay datos";
   }
-  if (datauserfind) {
-    if (datauserfind.premiun === true) {
-      premiun = "Habilitado";
-    } else {
-      premiun = "Deshabilitado";
-    }
-    if (datauserfind.perso.desc) {
-      descrip = datauserfind.perso.desc;
-    } else {
-      descrip = "No hay descripcion";
-    }
-    if (datauserfind.coins) {
-      coins = datauserfind.coins;
-    } else {
-      coins = 0;
-    }
-    if (datauserfind.emojisAll) {
-      emojis = emojisAll;
-    } else {
-      emojis = 0;
-    }
+  if (!datauserfind.premiun) {
+    premiun = "Deshabilitado";
+  } else if (datauserfind.premiun === true) {
+    premiun = "Habilitado";
+  } else {
+    premiun = "Deshabilitado";
   }
+  if (datauserfind.perso.desc) {
+    descrip = datauserfind.perso.desc;
+  } else {
+    descrip = "No hay descripcion";
+  }
+  if (datauserfind.coins) {
+    coins = datauserfind.coins;
+  } else {
+    coins = 0;
+  }
+  if (datauserfind.emojisAll) {
+    emojis = datauserfind.emojisAll;
+  } else {
+    emojis = 0;
+  }
+
   res.render(`./web/perfil`, {
     user: req.user,
     esta: true,
