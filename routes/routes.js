@@ -7,6 +7,7 @@ const setSugerencia_db = require("../util/models/setSugerencia_db");
 const warn2_db = require("../util/models/warn2_db");
 const guildShcema = require("../util/models/guild_db");
 const setConfention_db = require("../util/models/setConfention_db");
+const userdata = require("../util/models/users_db");
 
 router.get("/", (req, res) => {
   res.render("home", {
@@ -486,4 +487,49 @@ router.get(`/dash/:id/:Exito`, auth, async (req, res) => {
   });
 });
 
+router.get("/perfil/:id", async (req, res) => {
+  let datauserfind = await setSugerencia_db.findOne({ id: req.user.id });
+  let datosSend;
+  let premiun;
+  let descrip;
+  let coins;
+  let emojis;
+  if (userdata === null) {
+    datosSend = "No hay datos";
+  }
+  if (!userdata) {
+    datosSend = "No hay datos";
+  }
+  if (datauserfind) {
+    if (datauserfind.premiun === true) {
+      premiun = "Habilitado";
+    } else {
+      premiun = "Deshabilitado";
+    }
+    if (datauserfind.perso.desc) {
+      descrip = datauserfind.perso.desc;
+    } else {
+      descrip = "No hay descripcion";
+    }
+    if (datauserfind.coins) {
+      coins = datauserfind.coins;
+    } else {
+      coins = 0;
+    }
+    if (datauserfind.emojisAll) {
+      emojis = emojisAll;
+    } else {
+      emojis = 0;
+    }
+  }
+  res.render(`./web/perfil`, {
+    user: req.user,
+    esta: true,
+    datosSend,
+    emojis,
+    coins,
+    descrip,
+    premiun,
+  });
+});
 module.exports = router;

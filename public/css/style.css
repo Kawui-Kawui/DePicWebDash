@@ -310,8 +310,50 @@ textarea#texto {
 }
 .flecha:hover {
   background-color: #1e1f26;
-  padding: 0px 3px;
-  padding-right: 10px;
   padding: 0 3px;
   border-radius: 10px;
+}
+.cardperfil {
+  background-color: #151515;
+  padding: 10px 10px;
+  margin-right: 50%;
+  border-radius: 10px;
+}
+.avarperfil {
+  width: 14%;
+  border-radius: 50px;
+}
+.divbody {
+  margin-top: 30px;
+}
+.descper {
+  background-color: #151515;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+.badges {
+  border-radius: 50px;
+  width: 8%;
+}
+.Habilitado {
+  background-color: #43b581;
+  border-radius: 10px;
+  padding: 2px 2px;
+}
+.Habilitado:hover {
+  background-color: #7bdbaf;
+}
+.cardmuchs {
+  margin: 20px 10px;
+  background-color: #151515;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+.Deshabilitado {
+  background-color: #f04947;
+  border-radius: 10px;
+  padding: 2px 2px;
+}
+.Deshabilitado:hover {
+  background-color: #ff6f6e;
 }

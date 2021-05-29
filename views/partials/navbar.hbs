@@ -49,8 +49,9 @@
             alt="">{{user.username}} </button>
         </button>
         <div class="dropdown-menu dropsDownBlack dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-          <a class="dropdown-item btn dropsDownBlack" href="/dash">Dashboard</a>
-          <a class="dropdown-item btn dropsDownBlack" href="/login">Cambiar cuenta</a>
+          <a class="dropdown-item btn dropsDownBlack" href="dash">Dashboard</a>
+          <a class="dropdown-item btn dropsDownBlack" href="perfil/{{user.id}}">Perfil</a>
+          <a class="dropdown-item btn dropsDownBlack" href="login">Cambiar cuenta</a>
         </div>
       </div>
       {{ else }}
