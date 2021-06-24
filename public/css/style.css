@@ -196,7 +196,7 @@ hr {
   color: white;
 }
 .userAvatar {
-  border-radius: 100px;
+  border-radius: 10px;
   width: 5%;
 }
 .userBienvenida {
@@ -223,7 +223,7 @@ hr {
   padding-top: 4%;
 }
 .depicLogosxd {
-  border-radius: 100px;
+  border-radius: 10px;
 }
 
 .depicLogosxd1 {
@@ -356,4 +356,45 @@ textarea#texto {
 }
 .Deshabilitado:hover {
   background-color: #ff6f6e;
+}
+.divCard {
+  background-color: #17181e;
+  border-radius: 10px;
+}
+.PersonCard {
+  background-color: #272934;
+  border-radius: 10px;
+}
+.aGood:hover {
+  background-color: #17181e;
+  border-radius: 5%;
+}
+.aGood {
+  background-color: #272934;
+  border-radius: 10%;
+}
+.dahserDrop {
+  max-height: 190px;
+  opacity: 1;
+  overflow-y: scroll;
+}
+.dahserDrop::-webkit-scrollbar {
+  width: 8px;
+  background-color: #151515;
+  border-radius: 0 8px 0;
+}
+.dahserDrop::-webkit-scrollbar-thumb {
+  background-color: #272934;
+}
+.channelDrop:hover {
+  color: #acacac;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #151515;
+  border-radius: 0 13px 0;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #272934;
 }

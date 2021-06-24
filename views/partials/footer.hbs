@@ -1,5 +1,28 @@
 <footer class="colorblack">
-    <div class="bg-dark text-center">
-        <p class="">DePic &copy; 2021 - Todos los derechos reservados</p>
+  <div class="bg-dark text-center">
+    <p class="">DePic &copy; 2021 - Todos los derechos reservados</p>
+    <div>
+      <div class="container text-center">
+        <div class="row row-cols-3">
+
+          <div><a class="aGood" href="">
+              <h6 class="aGood">Soporte</h6></a>
+          </div>
+          <div>
+            <a class="aGood" href="#"><h6 class="aGood">Comandos</h6></a>
+          </div>
+          <div>
+              {{#if user}}
+                <a class="aGood" href="/dash"><h6 class="aGood">Ir a la Dashboard</h6></a>
+              {{ else }}
+                <a class="aGood" href="/login"><h6 class="aGood">Iniciar sesion</h6></a>
+              {{/if}}
+          </div>
+        </div>
+        <div style="padding-bottom: 50px; ">
+          <a href="https://invit.depic.xyz"><h6 class="aGood">Invitacion</h6></a>
+        </div>
+      </div>
     </div>
+  </div>
 </footer>
