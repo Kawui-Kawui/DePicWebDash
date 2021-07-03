@@ -398,3 +398,16 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background-color: #272934;
 }
+.selectionLabel {
+  position: relative;
+  display: inline-block;
+}
+.selectionLabel select {
+  width: 200px;
+  min-height: 35px;
+  background: #000;
+  border: 2px solid #acacac;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+}

@@ -5,9 +5,13 @@ const router = Router();
 const logsConfecion_db = require("../util/models/logsConfecion_db");
 const setSugerencia_db = require("../util/models/setSugerencia_db");
 const warn2_db = require("../util/models/warn2_db");
+const warn1_db = require("../util/models/warn1_db");
 const guildShcema = require("../util/models/guild_db");
 const setConfention_db = require("../util/models/setConfention_db");
 const userdata = require("../util/models/users_db");
+
+let rolesFind = require("../public/js/roles");
+
 try {
   router.get("/", (req, res) => {
     res.render("home", {
@@ -195,7 +199,11 @@ try {
         .sort((p, c) => p.position - c.position)
         .forEach((c) => lepush(canales, c));
     });
+
+    const roless = [];
+    rolesFind.roles(req.BotClient.guilds.cache.get(id), roless);
     let index2 = canales.join("\n");
+    let index3 = roless.join("\n");
     /* for (const key in guilds) {
     if (req.BotClient.guilds.cache.get(guilds[key].id)) {
       servidores.push({
@@ -278,6 +286,10 @@ try {
         .get(id)
         .channels.resolve(WarnsL.ChannelID).name;
     }
+    const contadorA20 = [];
+    for (let index = 0; index <= 15; index++) {
+      contadorA20.push({ number: index });
+    }
 
     res.render("../views/dash/serverDash/dashserver", {
       user: req.user,
@@ -291,9 +303,10 @@ try {
       co,
       canales,
       index2,
+      roless,
+      contadorA20,
     });
   });
-
   /*router.get(`/dash/:id/:exito`, auth, async (req, res) => {
   let id = req.params.id;
   let idEx = req.params.exito;
@@ -506,6 +519,43 @@ try {
     console.log("Guardado");
     res.redirect(`/dash/${id}`);
   });
+  router.post("/dash/:id/warnC", async (req, res) => {
+    let id = req.params.id;
+    let servidor = req.BotClient.guilds.cache.get(id);
+    let newPrefixPages = req.body;
+    console.log(newPrefixPages);
+    console.log(newPrefixPages);
+    if (!newPrefixPages.warnl) {
+    } else if (newPrefixPages.warnl === "1") {
+    } else {
+      let a = await warn1_db.findOne({ guildid: req.params.id });
+
+      let sv = new warn1_db({
+        guildid: req.params.id,
+        role: newPrefixPages.warnRA,
+        roletime: newPrefixPages.warnRC,
+        roleid: newPrefixPages.warnR,
+        kick: newPrefixPages.warnKA,
+        kicktime: newPrefixPages.warnKC,
+        ban: newPrefixPages.warnBA,
+        bantime: newPrefixPages.warnBC,
+      });
+      a
+        ? await warn1_db.updateOne({
+            guildid: req.params.id,
+            role: newPrefixPages.warnRA,
+            roletime: newPrefixPages.warnRC,
+            roleid: newPrefixPages.warnR,
+            kick: newPrefixPages.warnKA,
+            kicktime: newPrefixPages.warnKC,
+            ban: newPrefixPages.warnBA,
+            bantime: newPrefixPages.warnBC,
+          })
+        : await sv.save();
+    }
+    console.log("Guardado");
+    res.redirect(`/dash/${id}`);
+  });
   /*router.post("/dash/:id/bienve", async (req, res) => {
   let id = req.params.id;
   let servidor = req.BotClient.guilds.cache.get(id);
@@ -570,7 +620,7 @@ router.post("/dash/:id/sugest", async (req, res) => {
   res.redirect(`/dash/${id}/${Exito}`);
 });*/
 
-  router.get(`/dash/:id`, auth, async (req, res) => {
+  /*router.get(`/dash/:id`, auth, async (req, res) => {
     let id = req.params.id;
     let servidor = req.BotClient.guilds.cache.get(id);
     let guildfinds = await guildShcema.findOne({ id: req.params.id });
@@ -642,7 +692,6 @@ router.post("/dash/:id/sugest", async (req, res) => {
         .get(id)
         .channels.resolve(WarnsL.ChannelID).name;
     }
-
     res.render("../views/dash/serverDash/dashserver", {
       user: req.user,
       servidor,
@@ -653,8 +702,9 @@ router.post("/dash/:id/sugest", async (req, res) => {
       wal,
       col,
       co,
+      roless,
     });
-  });
+  });*/
 
   router.get("/perfil/:id", async (req, res) => {
     let datauserfind = await userdata.findOne({ id: req.params.id });

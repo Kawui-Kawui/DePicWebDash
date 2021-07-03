@@ -431,3 +431,369 @@
       </div-->
   </div>
 </div>
+<hr />
+<div class="card">
+  <h2 class="text-center" style="margin-top: 10px;">Sistema de Warns</h2>
+  <hr />
+
+  <form class="" action="/dash/{{servidor.id}}/warnC" method="post">
+    <div class="row row-cols-3" style="margin: 15px">
+      <div>
+        <p class="text-center">Ban Automatico</p>
+        <div class="divCard" style="padding: 20px; margin: 20px 20px">
+          <p>
+            <label class="selectionLabel">Activado:
+              <select
+                style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
+                id="idssas"
+                name="warnBA"
+                class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
+              >
+                <div class="dropdown dropdown">
+                  <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
+                </button-->
+
+                  <div
+                    style="padding: 0 50%;background-color: #17181e; max-height: 50px"
+                    class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
+                    aria-labelledby="navbarDarkDropdownMenuLink"
+                  >
+                    <option value="1"><a
+                        name="warnBA"
+                        class="dahserDrop"
+                        style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
+                        class="dropdown-item btn dropsDownBlack"
+                        href="#"
+                      >Seleciona el estado</a>
+                    </option>
+                    <option
+                      style="max-height: 190px; padding: 10px 50%;"
+                      value="true"
+                    ><a
+                        name="warnBA"
+                        class="dahserDrop"
+                        style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
+                        class="dropdown-item btn dropsDownBlack"
+                        href="#"
+                      >Activado</a></option>
+                    <option
+                      style="max-height: 190px; padding: 10px 50%;"
+                      value="false"
+                    ><a
+                        name="warnBA"
+                        class="dahserDrop"
+                        style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
+                        class="dropdown-item btn dropsDownBlack"
+                        href="#"
+                      >Desactivar</a></option>
+                  </div>
+                </div>
+              </select>
+            </label>
+          </p>
+          <p>
+            <label class="selectionLabel">Warns para el ban Automatico:
+              <select
+                style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
+                id="idssas"
+                name="warnBC"
+                class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
+              >
+                <div class="dropdown dropdown">
+                  <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
+                </button-->
+
+                  <div
+                    style="padding: 0 50%;background-color: #17181e; max-height: 50px"
+                    class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
+                    aria-labelledby="navbarDarkDropdownMenuLink"
+                  >
+                    <option value="1"><a
+                        name="warnBC"
+                        class="dahserDrop"
+                        style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
+                        class="dropdown-item btn dropsDownBlack"
+                        href="#"
+                      >Seleciona una cantidad!</a>
+                    </option>
+                    {{#each contadorA20}}
+
+                      <option
+                        style="max-height: 190px; padding: 10px 50%;"
+                        value="{{this.number}}"
+                      ><a
+                          name="warnBC"
+                          class="dahserDrop"
+                          style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
+                          class="dropdown-item btn dropsDownBlack"
+                          href="#"
+                        >{{this.number}}</a>
+                      </option>
+                    {{/each}}
+                  </div>
+                </div>
+              </select>
+            </label></p>
+        </div>
+      </div>
+      <div>
+        <p class="text-center">Role Automatico</p>
+        <div class="divCard" style="padding: 20px; margin: 20px 20px">
+          <p>
+            <label class="selectionLabel">Activado:
+              <select
+                style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
+                id="idssas"
+                name="warnRA"
+                class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
+              >
+                <div class="dropdown dropdown">
+                  <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
+                </button-->
+
+                  <div
+                    style="padding: 0 50%;background-color: #17181e; max-height: 50px"
+                    class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
+                    aria-labelledby="navbarDarkDropdownMenuLink"
+                  >
+                    <option value="1"><a
+                        name="warnCRA"
+                        class="dahserDrop"
+                        style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
+                        class="dropdown-item btn dropsDownBlack"
+                        href="#"
+                      >Seleciona el estado</a>
+                    </option>
+                    <option
+                      style="max-height: 190px; padding: 10px 50%;"
+                      value="true"
+                    ><a
+                        name="warnRA"
+                        class="dahserDrop"
+                        style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
+                        class="dropdown-item btn dropsDownBlack"
+                        href="#"
+                      >Activado</a></option><option
+                      style="max-height: 190px; padding: 10px 50%;"
+                      value="false"
+                    ><a
+                        name="warnRA"
+                        class="dahserDrop"
+                        style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
+                        class="dropdown-item btn dropsDownBlack"
+                        href="#"
+                      >Desactivar</a></option>
+                  </div>
+                </div>
+              </select>
+            </label>
+          </p>
+          <p>
+            <label class="selectionLabel">
+              Warns para el rol Automatico:
+              <select
+                style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
+                id="warnRC"
+                name="warnRC"
+                class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
+              >
+                <div class="dropdown dropdown">
+                  <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
+                </button-->
+
+                  <div
+                    style="padding: 0 50%;background-color: #17181e; max-height: 50px"
+                    class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
+                    aria-labelledby="navbarDarkDropdownMenuLink"
+                  >
+                    <option value="1"><a
+                        name="warnRC"
+                        class="dahserDrop"
+                        style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
+                        class="dropdown-item btn dropsDownBlack"
+                        href="#"
+                      >Seleciona una cantidad!</a>
+                    </option>
+                    {{#each contadorA20}}
+
+                      <option
+                        style="max-height: 190px; padding: 10px 50%;"
+                        value="{{this.number}}"
+                      ><a
+                          name="warnRC"
+                          class="dahserDrop"
+                          style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
+                          class="dropdown-item btn dropsDownBlack"
+                          href="#"
+                        >{{this.number}}</a>
+                      </option>
+                    {{/each}}
+                  </div>
+                </div>
+              </select>
+            </label>
+          </p>
+          <p>
+            <label class="selectionLabel">Rol:
+              <select
+                style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
+                id="idssas"
+                name="warnR"
+                class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
+              >
+                <div class="dropdown dropdown">
+                  <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
+                </button-->
+
+                  <div
+                    style="padding: 0 50%;background-color: #17181e; max-height: 50px"
+                    class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
+                    aria-labelledby="navbarDarkDropdownMenuLink"
+                  >
+
+                    <option value="1"><a
+                        name="warnR"
+                        class="dahserDrop"
+                        style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
+                        class="dropdown-item btn dropsDownBlack"
+                        href="#"
+                      >Seleciona el rol!</a>
+                    </option>
+                    {{#each roless}}
+
+                      <option
+                        style="max-height: 190px; padding: 10px 50%;"
+                        value="{{this.id}}"
+                      ><a
+                          name="warnR"
+                          class="dahserDrop"
+                          style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
+                          class="dropdown-item btn dropsDownBlack"
+                          href="#"
+                        >{{this.name}}</a>
+                      </option>
+                    {{/each}}
+                  </div>
+                </div>
+              </select>
+            </label>
+          </p>
+        </div>
+      </div>
+      <div>
+        <p class="text-center">Kick Automatico</p>
+        <div class="divCard" style="padding: 20px; margin: 20px 20px">
+          <p>
+
+            <label class="selectionLabel">Activado:
+              <select
+                style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
+                id="idssas"
+                name="warnKA"
+                class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
+              >
+                <div class="dropdown dropdown">
+                  <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
+                </button-->
+
+                  <div
+                    style="padding: 0 50%;background-color: #17181e; max-height: 50px"
+                    class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
+                    aria-labelledby="navbarDarkDropdownMenuLink"
+                  >
+                    <option value="1"><a
+                        name="warnKA"
+                        class="dahserDrop"
+                        style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
+                        class="dropdown-item btn dropsDownBlack"
+                        href="#"
+                      >Seleciona el estado</a>
+                    </option>
+                    <option
+                      style="max-height: 190px; padding: 10px 50%;"
+                      value="true"
+                    ><a
+                        name="warnKA"
+                        class="dahserDrop"
+                        style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
+                        class="dropdown-item btn dropsDownBlack"
+                        href="#"
+                      >Activado</a></option><option
+                      style="max-height: 190px; padding: 10px 50%;"
+                      value="true"
+                    ><a
+                        name="warnKA"
+                        class="dahserDrop"
+                        style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
+                        class="dropdown-item btn dropsDownBlack"
+                        href="#"
+                      >Desactivar</a></option>
+                  </div>
+                </div>
+              </select>
+            </label>
+          </p>
+          <p>
+            <label class="selectionLabel">Warns para el kick Automatico:
+              <select
+                style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
+                id="idssas"
+                name="warnKC"
+                class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
+              >
+                <div class="dropdown dropdown">
+                  <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
+                </button-->
+
+                  <div
+                    style="padding: 0 50%;background-color: #17181e; max-height: 50px"
+                    class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
+                    aria-labelledby="navbarDarkDropdownMenuLink"
+                  >
+                    <option value="1"><a
+                        name="warnKC"
+                        class="dahserDrop"
+                        style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
+                        class="dropdown-item btn dropsDownBlack"
+                        href="#"
+                      >Seleciona una cantidad!</a>
+                    </option>
+                    {{#each contadorA20}}
+
+                      <option
+                        style="max-height: 190px; padding: 10px 50%;"
+                        value="{{this.number}}"
+                      ><a
+                          name="warnKC"
+                          class="dahserDrop"
+                          style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
+                          class="dropdown-item btn dropsDownBlack"
+                          href="#"
+                        >{{this.number}}</a>
+                      </option>
+                    {{/each}}
+                  </div>
+                </div>
+              </select>
+            </label>
+
+          </p>
+        </div>
+      </div>
+      <div>
+
+      </div>
+      <button name="idsss" class="btn btn-success" type="submit"><i
+          class="far fa-save"
+        ></i>Guardar</button>
+    </div>
+  </form>
+  <hr />
+</div>
