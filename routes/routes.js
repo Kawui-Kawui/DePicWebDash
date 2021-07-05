@@ -235,6 +235,17 @@ try {
     let confection = await setConfention_db.findOne({ guild: req.params.id });
     let confectionL = await logsConfecion_db.findOne({ guild: req.params.id });
     let WarnsL = await warn2_db.findOne({ guild: req.params.id });
+    let WarnsC = await warn1_db.findOne({ guildid: req.params.id });
+
+    let allConfig = {
+      role: WarnsC.roleid,
+      roleTime: WarnsC.roletime,
+      roleA: WarnsC.role,
+      ban: WarnsC.ban,
+      bantime: WarnsC.bantime,
+      kick: WarnsC.kick,
+      kicktime: WarnsC.kicktime,
+    };
 
     let predef = "No hay canal";
     let su;
@@ -305,6 +316,7 @@ try {
       index2,
       roless,
       contadorA20,
+      allConfig,
     });
   });
   /*router.get(`/dash/:id/:exito`, auth, async (req, res) => {

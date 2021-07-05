@@ -796,4 +796,33 @@
     </div>
   </form>
   <hr />
+  <div>
+    <h2 class="text-center">Configuracion actual</h2>
+    <div
+      class="row row-cols-3 text-center"
+      style="margin: 10px; padding-top: 15px"
+    >
+      <div class="divCard" style="background-color: #151515;">
+        <h3>Roles</h3>
+        <p>Rol Automatico:
+          {{allConfig.role}}<br />
+          Warns Necesarios:
+          {{allConfig.roleTime}}<br />
+          Activado:
+          {{allConfig.roleA}}</p>
+      </div>
+      <div class="divCard" style="background-color: #151515;">
+        <h3>Ban</h3>
+        <p>Warns Necesarios:
+          {{allConfig.bantime}}<br />Activado:
+          {{allConfig.ban}}</p>
+      </div>
+      <div class="divCard" style="background-color: #151515; ">
+        <h3>Kick</h3>
+        <p>Warns Necesarios:
+          {{allConfig.kicktime}}<br />Activado:
+          {{allConfig.kick}}</p>
+      </div>
+    </div>
+  </div>
 </div>
