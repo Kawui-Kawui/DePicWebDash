@@ -1,0 +1,34 @@
+<div>
+  <h1>Tickets Configuracion</h1>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">
+        <img
+          class="img23"
+          src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
+          alt=""
+          width="60"
+          height="60"
+        />Prefix</h5>
+      <p class="card-text">Prefix actual: {{prefixMostrar}} </p>
+      <p>{{Exitoid}}</p>
+      <form
+        class="card-text"
+        action="/dash/{{servidor.id}}/prefix"
+        method="post"
+      >
+        <p>Introdusca el nuevo prefix</p>
+        <input
+          placeholder="&"
+          name="prefix"
+          type="text"
+          class="colorblack"
+          style="border-radius: 5px; padding: 5px"
+        />
+        <button class="btn btn-dark" type="submit"><i
+            class="far fa-save"
+          ></i>Guardar</button>
+      </form>
+    </div>
+  </div>
+</div>

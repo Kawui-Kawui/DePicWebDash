@@ -10,10 +10,14 @@ const guildShcema = require("../util/models/guild_db");
 const setConfention_db = require("../util/models/setConfention_db");
 const userdata = require("../util/models/users_db");
 
+const shop = require("./shop/index");
+const order = require("./shop/paymets/index");
+
 let rolesFind = require("../public/js/roles");
 
 try {
   router.get("/", (req, res) => {
+    console.log(req.user);
     res.render("home", {
       user: req.user,
       esta: true,
@@ -29,7 +33,7 @@ try {
       res.redirect("/");
     }
   );
-
+  router.use("/order", order);
   router.get(
     "/tienda/discord/login",
     passport.authenticate("discord"),
@@ -67,79 +71,8 @@ try {
       esta: true,
     });
   });
-  router.get("/rgl3", (req, res) => {
-    res.render("./web/reglas/rgl3", {
-      user: req.user,
-      esta: true,
-    });
-  });
-  router.get("/tienda", (req, res) => {
-    res.render("./web/tienda", {
-      user: req.user,
-      esta: true,
-    });
-  });
-  //Tienda
-  router.get("/tienda/existo", (req, res) => {
-    res.render("./web/compra/discordbot", {
-      user: req.user,
-      esta: true,
-    });
-  });
-  router.get("/tienda/discord/bot", (req, res) => {
-    res.render("./web/compra/discordbot", {
-      user: req.user,
-      esta: true,
-    });
-    router.get("/tienda/discord/bot/s", (req, res) => {
-      res.render("./web/compra/discord/s", {
-        user: req.user,
-        esta: true,
-      });
-    });
-    router.get("/tienda/discord/bot/a", (req, res) => {
-      res.render("./web/compra/discord/a", {
-        user: req.user,
-        esta: true,
-      });
-    });
-    router.get("/tienda/discord/bot/m", (req, res) => {
-      res.render("./web/compra/discord/m", {
-        user: req.user,
-        esta: true,
-      });
-    });
-    router.get("/tienda/discord/bot/c", (req, res) => {
-      res.render("./web/compra/discord/c", {
-        user: req.user,
-        esta: true,
-      });
-    });
-  });
-  router.get("/tienda/", (req, res) => {
-    res.render("./web/tienda", {
-      user: req.user,
-      esta: true,
-    });
-  });
-  router.get("/success/", (req, res) => {
-    res.render("./web/compra/success/successBS", {
-      user: req.user,
-      esta: true,
-    });
-  });
-  router.get("/tienda", (req, res) => {
-    res.render("./web/tienda", {
-      user: req.user,
-      esta: true,
-    });
-  });
-  router.get("/tienda", (req, res) => {
-    res.render("./web/tienda", {
-      user: req.user,
-      esta: true,
-    });
-  });
+  router.use("/tienda", shop);
+
   router.get("/dash", auth, (req, res) => {
     let guilds = req.user.guilds.filter((p) => (p.permissions & 8) === 8);
     let servidores = [];
@@ -317,6 +250,41 @@ try {
       roless,
       contadorA20,
       allConfig,
+    });
+  });
+  router.get(`/dash/:id/tickets`, auth, async (req, res) => {
+    let id = req.params.id;
+    let servidor = req.BotClient.guilds.cache.get(id);
+    let custom;
+    let guildfinds = await guildShcema.findOne({ id: req.params.id });
+    const lepush = (q, c) => {
+      if (c.type == "text") q.push({ name: c.name, id: c.id });
+    };
+    let categorias = servidor.channels.cache
+      .filter((q) => q.type == "category")
+      .sort((p, c) => p.position - c.position);
+    let canales = [];
+    servidor.channels.cache
+      .filter((q) => q.type != "category")
+      .filter((q) => !q.parentID)
+      .sort((p, c) => p.position - c.position)
+      .forEach((c) => lepush(canales, c));
+    categorias.forEach((c) => {
+      lepush(canales, c);
+      servidor.channels.cache
+        .filter((q) => q.parentID == c.id)
+        .sort((p, c) => p.position - c.position)
+        .forEach((c) => lepush(canales, c));
+    });
+
+    const roless = [];
+    rolesFind.roles(req.BotClient.guilds.cache.get(id), roless);
+    let index2 = canales.join("\n");
+    let index3 = roless.join("\n");
+
+    res.render("../views/dash/serverDash/complements/tickets", {
+      user: req.user,
+      servidor,
     });
   });
   /*router.get(`/dash/:id/:exito`, auth, async (req, res) => {
@@ -777,7 +745,5 @@ router.post("/dash/:id/sugest", async (req, res) => {
       premiun,
     });
   });
-} catch (error) {
-  res.render("./web/cmd");
-}
+} catch (error) {}
 module.exports = router;

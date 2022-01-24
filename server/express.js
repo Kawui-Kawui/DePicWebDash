@@ -4,12 +4,13 @@ const hbs = require("express-handlebars");
 const passport = require("./passport");
 const BotClient = require("./bot");
 const path = require("path");
+const morgan = require("morgan");
 const app = express();
 
 app
   .set("port", process.env.PORT || 3000)
   .use(express.static("public"))
-  .use(express.urlencoded({extended: true}))
+  .use(express.urlencoded({ extended: true }))
   .use(
     session({
       secret: "DashBoardDePic",
@@ -26,6 +27,10 @@ app
     req.BotClient = BotClient;
     next();
   })
-  .use("/", require("../routes/routes"));
+  .use(morgan("dev"))
+  .use("/", require("../routes/routes"))
+  .use((req, res, next) => {
+    res.status(404).render("404");
+  });
 
 module.exports = app;
