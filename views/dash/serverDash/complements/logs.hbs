@@ -1,0 +1,162 @@
+<div style="padding-top:10px;">
+  <h1>
+    <img
+      class="img233"
+      src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
+      alt="SERVER LOGO"
+      width="80"
+      height="80"
+    />
+
+    {{servidor.name}}</h1>
+  <form action="/dash/{{servidor.id}}/others" method="post">
+    <div class="Gcontent logsGrid">
+
+      <div class="logs CardInfo">
+
+        <h4>Logs</h4>
+        <hr />
+        <div>
+
+          <div class="colums2">
+            <div>
+              <h5>Activado</h5>
+            </div>
+            <div class="switch">
+              <input
+                type="checkbox"
+                name="logs"
+                {{allConfig.logs.enabled}}
+                value="true"
+                id="ban"
+              />
+              <label for="ban" class="lbl"></label>
+            </div>
+
+            <div>
+              <h5>Canal</h5>
+            </div>
+            <select name="logsid" id="channelid" class="drops">
+              {{#if allConfig.logs.name.name}}
+                <option
+                  name="logsid"
+                  class="options"
+                  value="{{allConfig.logs.id}}"
+                >
+                  {{allConfig.logs.name.name}}</option>
+              {{else}}
+                <option class="options">Ninguno</option>
+              {{/if}}
+              {{#each canales}}
+                <option
+                  name="logsid"
+                  class="options"
+                  value="{{this.id}}"
+                >{{this.name}}</option>
+              {{/each}}
+
+            </select>
+          </div>
+          <hr />
+        </div>
+      </div>
+      <div class="config CardInfo">
+
+        <h4>Confeciones</h4>
+        <div>
+
+          <div class="colums2">
+            <div>
+              <h5>Canal</h5>
+            </div>
+            <select name="confeid" id="channelid" class="drops">
+              {{#if allConfig.confe.name.name}}
+                <option
+                  name="confeid"
+                  class="options"
+                  value="{{allConfig.confe.id}}"
+                >
+                  {{allConfig.confe.name.name}}</option>
+              {{else}}
+                <option class="options">Ninguno</option>
+              {{/if}}
+              {{#each canales}}
+                <option
+                  name="confeid"
+                  class="options"
+                  value="{{this.id}}"
+                >{{this.name}}</option>
+              {{/each}}
+
+            </select>
+
+            <div>
+              <h5>Canal Logs</h5>
+            </div>
+            <select name="confeLid" id="channelid" class="drops">
+              {{#if allConfig.confeLogs.name.name}}
+                <option
+                  name="confeLid"
+                  class="options"
+                  value="{{allConfig.confeLogs.id}}"
+                >
+                  {{allConfig.confeLogs.name.name}}</option>
+              {{else}}
+                <option class="options">Ninguno</option>
+              {{/if}}
+              {{#each canales}}
+                <option
+                  name="confeLid"
+                  class="options"
+                  value="{{this.id}}"
+                >{{this.name}}</option>
+              {{/each}}
+
+            </select>
+          </div>
+        </div>
+
+      </div>
+      <div class="data CardInfo">
+        <h4>Sugerencias</h4>
+        <div>
+          <div class="colums2">
+
+            <div>
+              <h5>Canal</h5>
+            </div>
+            <select name="sugeid" id="channelid" class="drops">
+              {{#if allConfig.sugest.name.name}}
+                <option
+                  name="sugeid"
+                  class="options"
+                  value="{{allConfig.sugest.id}}"
+                >
+                  {{allConfig.sugest.name.name}}</option>
+              {{else}}
+                <option class="options">Ninguno</option>
+              {{/if}}
+              {{#each canales}}
+                <option
+                  name="sugeid"
+                  class="options"
+                  value="{{this.id}}"
+                >{{this.name}}</option>
+              {{/each}}
+
+            </select>
+
+          </div>
+          <hr />
+        </div>
+      </div>
+      <div class="bot CardInfo">
+
+        <div style="display: grid; place-items: center; ">
+          <h3>Guardar todo</h3>
+          <button class="btn btn-dark" type="submit">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,99 @@
+<div style="padding-top:10px;">
+  <h1>
+    <img class="img233" src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png" alt="SERVER LOGO"
+      width="80" height="80" />
+
+    {{servidor.name}}
+  </h1>
+  <div class="GcontentBienv bienvGrid">
+    <div class="CardInfo data">
+      <h4>Apodo</h4>
+      <hr />
+      <div>
+        <form action="/dash/{{servidor.id}}/bienvp/nickname" method="post"  style="padding-bottom: 8px">
+          <label for="apodo" style="padding-right: 100px;">Prefix</label>
+          <input name="apodo" id="apodo" placeholder="[Member]" type="text" class="input"
+            style="border-radius: 8px; padding: 6px; height: 30px" />
+          <p style="color: #7E7E7E">Se sugiere que coloques un espacio Al final</p>
+          <div style="display: grid; place-items: center; ">
+            <button class="btn btn-dark" type="submit">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="CardInfo config">
+      <h4>Rol</h4>
+      <hr />
+      <div>
+        <form action="/dash/{{servidor.id}}/bienvp/rol" method="post"  style="padding-bottom: 8px">
+
+          <label style="padding-right: 68px;" for="rolId">Rol para dar</label>
+          <select name="rolId" id="rolId" class="drops">
+            <option value="rolId" class="options" value="Ninguno">Ninguno</option>
+            {{#each roles}}
+              <option name="rolId" class="options" value="{{this.id}}">{{this.name}}</option>
+            {{/each}}
+
+          </select>
+          <p style="color: #7E7E7E">Rol que se da cuando se une al server</p>
+
+          <div style="display: grid; place-items: center; ">
+            <button class="btn btn-dark" type="submit">Guardar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="CardInfo logs">
+      <h4>Canal</h4>
+      <hr />
+      <div>
+        <form action="/dash/{{servidor.id}}/bienvp/channel" method="post"  style="padding-bottom: 8px">
+
+          <label style="padding-right: 68px;" for="channelid">Canal para el mensaje</label>
+          <select name="channelid" id="channelid" class="drops">
+            <option value="channelid" class="options" value="Ninguno">Ninguno</option>
+            {{#each canales}}
+              <option name="channelid" class="options" value="{{this.id}}">{{this.name}}</option>
+            {{/each}}
+
+          </select>
+          <p style="color: #7E7E7E">Canal donde se manda el mensaje de bienvenida</p>
+
+          <div style="display: grid; place-items: center; ">
+            <button class="btn btn-dark" type="submit">Guardar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+    <div class="CardInfo bot">
+
+      <h4>Imagen</h4>
+      <hr />
+      <form action="/dash/{{servidor.id}}/bienvp/img" method="post"  style="padding-bottom: 8px">
+        <div>
+          <label style="padding-right: 10px" for="img">URL de la imagen</label>
+          <input type="text" name="img" id="img"
+            placeholder="https://cdn.discordapp.com/attachments/763804175510929469/935283849414471770/DiscordLogo.png"
+            style="border-radius: 8px; padding: 6px; height: 30px; width: 1000px;" class="imput" />
+
+          <div style="display: grid; place-items: center; padding-bottom: 16px; 
+          grid-template-columns: 70% 30% ">
+            <div>
+              <br>
+            <img src="{{checked.img}}" class="imgBienv"
+              alt="Si no se ve la imagen, es que no es compatible o no esta hay ninguna imagen colocada" />
+              </div>
+            <div>
+            <button class="btn btn-dark" type="submit">Guardar</button>
+
+            </div>
+
+
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

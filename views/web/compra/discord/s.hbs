@@ -1,65 +1,31 @@
 <div>
-    <div class="card mb-3 cardDash">
-        <img src="https://cdn.discordapp.com/attachments/763804175510929469/828482268003041351/Discord-LogoWordmark-Color.png"
-            class="card-img-top " alt="...">
-        <div class="card-body ">
-            <h2 class="card-title text-center">Bots sencillos</h2>
-            <div class="row text-center">
-                <div class="col-sm-4">
-                    <p class="">Mas de 30 comandos<br>Personalizable!<br>Comandos de informacion de tu
-                        comunidad!</p>
-                </div>
-                <div class="col-sm-4">
-                    <p class=""><a href="#">Ver</a> Terminos y condiciones <br>La unica forma de pagar es por
-                        paypal</p>
-
-                </div>
-                <div class="col-sm-4">
-                    <p class="">Despues de comprar te aparecera un formurario para que ingreses los datos del
-                        bot que quieres</p>
-
-                </div>
-            </div>
-            <hr>
-            <div id="smart-button-container">
-                <div style="text-align: center;">
-                    <div id="paypal-button-container"></div>
-                </div>
-            </div>
-            <script
-                src="https://www.paypal.com/sdk/js?client-id=Ae5tRlofBoNs_qmNfpSFMFDa-sTDWRTDQowwdJC_ElDRFSEiLzA8Cc7sTKTdiy9UQVIQeJTfsQIiX6k3&currency=USD"
-                data-sdk-integration-source="button-factory"></script>
-            <script>
-                function initPayPalButton() {
-                    paypal.Buttons({
-                        style: {
-                            shape: 'rect',
-                            color: 'silver',
-                            layout: 'vertical',
-                            label: 'pay',
-
-                        },
-
-                        createOrder: function (data, actions) {
-                            return actions.order.create({
-                                purchase_units: [{ "description": "Bots sencillo de discord", "amount": { "currency_code": "USD", "value": 6 } }]
-                            });
-                        },
-
-                        onApprove: function (data, actions) {
-                            return actions.order.capture().then(function (details) {
-                                alert('Transaction completed by ' + details.payer.name.given_name + '!');
-                            });
-                        },
-
-                        onError: function (err) {
-                            console.log(err);
-                        }
-                    }).render('#paypal-button-container');
-                }
-                initPayPalButton();
-            </script>
-            <p class="card-text"><small class="text-muted">Top!</small></p>
+  <div class="card mb-3 cardDash">
+    <img
+      src="https://cdn.discordapp.com/attachments/763804175510929469/828482268003041351/Discord-LogoWordmark-Color.png"
+      class="card-img-top"
+      alt="..."
+    />
+    <div class="card-body">
+      <h2 class="card-title text-center">Bots sencillos</h2>
+      <div class="row text-center">
+        <div class="col-sm-4">
+          <p class="">Mas de 30 comandos<br />Personalizable!<br />Comandos de
+            informacion de tu comunidad!</p>
         </div>
+        <div class="col-sm-4">
+          <p class=""><a href="#">Ver</a>
+            Terminos y condiciones
+            <br />La unica forma de pagar es por paypal</p>
+
+        </div>
+        <div class="col-sm-4">
+          <p class="">Despues de comprar te aparecera un formurario para que
+            ingreses los datos del bot que quieres</p>
+
+        </div>
+      </div>
+      <hr />
+      <p class="card-text"><small class="text-muted">Top!</small></p>
     </div>
+  </div>
 </div>

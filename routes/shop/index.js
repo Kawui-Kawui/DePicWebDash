@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const router = Router();
+const passport = require("../../server/passport");
 const discord = require("./discord/DS");
 const unturned = require("./unturned/unturned");
 

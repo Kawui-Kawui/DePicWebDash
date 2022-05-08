@@ -1,0 +1,38 @@
+.all-dash {
+    display: grid;
+    grid-template-columns: minmax(0%, 17%) minmax(0%, 100%);
+    grid-template-rows: auto;
+    grid-template-areas: "sider main main";
+    place-content: center;
+    grid-column-gap: 20px;
+}
+
+.items:hover {
+    color: #CCCECF;
+    margin-left: 20px;
+    transition: 0.4s
+}
+
+.items {
+    color: #9A9DA0;
+    margin-left: 0px;
+    transition: 0.4s
+}
+
+.sider {
+    border-radius: 0% 10px 10px 0%;
+    grid-area: "sider";
+    padding-left: 5px;
+    padding-top: 10px;
+    background-color: #14151a;
+}
+
+.main {
+    grid-area: "mian";
+    padding-top: 20px;
+}
+
+.items {
+    margin-bottom: 5px;
+    font-size: 24px;
+}

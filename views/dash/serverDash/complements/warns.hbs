@@ -1,0 +1,272 @@
+<div style="padding-top:10px;">
+  <h1>
+    <img
+      class="img233"
+      src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
+      alt="SERVER LOGO"
+      width="80"
+      height="80"
+    />
+
+    {{servidor.name}}</h1>
+  <div class="Gcontent warnsGrid">
+    <div class="config CardInfo">
+      <h4>Actual Config</h4>
+      <hr />
+      <div class="Gcontent">
+        <div>
+          <h5>Ban</h5>
+          <div
+            class="config CardInfo Gcontent"
+            style="background-color: #1C1D24; padding-top: 10px"
+          >
+            <p>Necesarios: {{allConfig.bantime}}</p>
+            <p>{{allConfig.ban}}</p>
+
+          </div>
+        </div>
+        <div>
+          <h5>Kick</h5>
+          <div
+            class="config CardInfo Gcontent"
+            style="background-color: #1C1D24; padding-top: 10px"
+          >
+            <p>Necesarios: {{allConfig.kicktime}}</p>
+            <p>{{allConfig.kick}}</p>
+
+          </div>
+        </div>
+        <div style=" padding-bottom: 10px">
+          <h5>Rol</h5>
+          <div
+            class="config CardInfo Gcontent"
+            style="background-color: #1C1D24; padding-top: 10px;"
+          >
+            <p>Rol: {{allConfig.role}}</p>
+            <p>Necesarios: {{allConfig.roleTime}}</p>
+            <p>{{allConfig.roleA}}</p>
+
+          </div>
+        </div>
+
+        <div style="padding-bottom: 10px, ">
+          <h5>PROXIMAMENTE</h5>
+        </div>
+      </div>
+    </div>
+    <div class="data CardInfo Rows3">
+      <h4>Configurar</h4>
+      <form action="/dash/{{servidor.id}}/warnC" method="post">
+        <div>
+          <div class="colums2">
+            <div>
+              <h5>Baneo Automatico</h5>
+            </div>
+            <div class="switch">
+              <input
+                type="checkbox"
+                name="ban"
+                {{otherConfig.ban}}
+                value="true"
+                id="ban"
+              />
+              <label for="ban" class="lbl"></label>
+            </div>
+            <label for="banT">Warns necesarios</label>
+            <select name="banT" id="banT" class="drops">
+
+              <option
+                name="banT"
+                class="options"
+                value="{{otherConfig.bantime}}"
+              >{{otherConfig.bantime}}</option>
+
+              {{#each contadorA20}}
+                <option
+                  name="banT"
+                  class="options"
+                  value="{{this.number}}"
+                >{{this.number}}</option>
+              {{/each}}
+
+            </select>
+          </div>
+
+          <hr />
+          <div class="colums2">
+            <div>
+              <h5>Kick Automatico</h5>
+            </div>
+            <div class="switch">
+              <input
+                type="checkbox"
+                {{otherConfig.kick}}
+                name="kick"
+                value="true"
+                id="kick"
+              />
+              <label for="kick" class="lbl"></label>
+            </div>
+
+            <label for="kickT">Warns necesarios</label>
+            <select name="kickT" id="kickT" class="drops">
+
+              <option
+                name="kickT"
+                class="options"
+                value="{{otherConfig.kicktime}}"
+              >{{otherConfig.kicktime}}</option>
+              {{#each contadorA20}}
+                <option
+                  name="kickT"
+                  class="options"
+                  value="{{this.number}}"
+                >{{this.number}}</option>
+              {{/each}}
+
+            </select>
+          </div>
+          <hr />
+          <div class="colums2">
+            <div>
+              <h5>Rol Automatico</h5>
+            </div>
+            <div class="switch">
+              <input
+                type="checkbox"
+                {{otherConfig.roleA}}
+                name="rol"
+                id="rol"
+                value="true"
+              />
+              <label for="rol" class="lbl"></label>
+            </div>
+
+            <label for="rolT">Warns necesarios</label>
+            <select name="rolT" id="rolT" class="drops">
+
+              <option
+                name="rolT"
+                class="options"
+                value="{{otherConfig.roleTime}}"
+              >{{otherConfig.roleTime}}</option>
+
+              {{#each contadorA20}}
+                <option
+                  name="rolT"
+                  class="options"
+                  value="{{this.number}}"
+                >{{this.number}}</option>
+              {{/each}}
+
+            </select>
+
+            <label for="rolId">Rol Para dar</label>
+            <select name="rolId" id="rolId" class="drops">
+              <option
+                value="rolId"
+                class="options"
+                value="{{otherConfig.role}}"
+              >{{otherConfig.roleName}}</option>
+              {{#each roles}}
+                <option
+                  name="rolId"
+                  class="options"
+                  value="{{this.id}}"
+                >{{this.name}}</option>
+              {{/each}}
+
+            </select>
+          </div>
+
+        </div>
+        <div style="display: grid; place-items: center;">
+
+          <button class="btn btn-dark" type="submit">Guardar</button>
+        </div>
+      </form>
+    </div>
+    <div class="logs CardInfo">
+      <h4>Top 3 en warns</h4>
+      <div
+        style="display:grid; grid-template-columns:  repeat(3, 1fr); grid-column-gap: 50px;"
+      >
+        {{#each warnigs_members}}
+          {{#if this.in}}
+            <div class="{{this.pos}}">
+              <p>
+                <img
+                  class="userAvar"
+                  src="{{this.avar}}"
+                  alt="{{this.name}}"
+                  width="50"
+                  height="50"
+                />
+                {{this.name}}
+              </p>
+
+            </div>
+            <div class="s20px">
+              <p>Warns: {{this.warnings}}</p>
+            </div>
+
+            <div class="s20px">
+              <button
+                class="btn btn-danger"
+                onclick="sure(`{{this.id}}`, `ban`)"
+              >BAN</button>
+              <button
+                class="btn btn-dark"
+                onclick="sure(`{{this.id}}`, `kick`)"
+              >KICK</button>
+            </div>
+            <div></div>
+            <div><p id="{{this.id}}_sure"></p></div>
+            <div>
+              <form action="/dash/{{this.guild}}/button" method="post">
+                <input name="type" style="display: none !important" id="type" />
+                <button
+                  id="{{this.id}}_sureButton"
+                  value="{{this.id}}"
+                  name="member"
+                  type="submit"
+                  style="display:none !important"
+                  class="btn btn-dark"
+                >Confirmar</button>
+              </form>
+            </div>
+
+          {{else}}
+            <div>
+              <p>
+                <img
+                  class="userAvar"
+                  src="{{this.avar}}"
+                  alt="{{this.name}}"
+                  width="50"
+                  height="50"
+                />
+                {{this.name}}
+              </p>
+
+            </div>
+            <div class="s20px">
+              <p>Warns: {{this.warnings}}</p>
+            </div>
+
+            <div class="s20px">
+              <p>Sin Accion</p>
+            </div>
+
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <script>
+    function sure(member, type) {
+    document.getElementById(`${member}_sure`).innerHTML = "Seguro?"
+    document.getElementById(`${member}_sureButton`).style = "display:"
+    document.getElementById("type").value = type}
+  </script>
+</div>

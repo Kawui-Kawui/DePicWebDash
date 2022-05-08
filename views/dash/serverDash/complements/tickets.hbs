@@ -1,34 +1,126 @@
-<div>
-  <h1>Tickets Configuracion</h1>
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">
-        <img
-          class="img23"
-          src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
-          alt=""
-          width="60"
-          height="60"
-        />Prefix</h5>
-      <p class="card-text">Prefix actual: {{prefixMostrar}} </p>
-      <p>{{Exitoid}}</p>
-      <form
-        class="card-text"
-        action="/dash/{{servidor.id}}/prefix"
-        method="post"
+<div style="padding-top:10px;">
+  <h1>
+    <img
+      class="img233"
+      src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
+      alt="SERVER LOGO"
+      width="80"
+      height="80"
+    />
+
+    {{servidor.name}}
+  </h1>
+  <div class="CardInfo">
+    <h1>Tickets</h1>
+    <p style="color: #7E7E7E">Los tickets estan en una version
+      <b style="color: #BEBEBE">BETA</b>
+      y hasta que no tengamos mejor almacenamiento seguira en una version
+      <b style="color: #BEBEBE">BETA</b></p>
+    <div class="embed">
+      <div class="body">
+        <div style="background:#B072FF; border-radius: 10px"></div>
+        <div>
+          <div>
+            <p>Seleciona un color para la barra lateral!</p>
+            <input type="checkbox" name="white" value="true" id="color1" />
+            <label
+              for="color1"
+              class="colorBox"
+              style="background: #FFFFFF"
+            ></label>
+            <input type="checkbox" name="grey" value="true" id="color2" />
+            <label
+              for="color2"
+              class="colorBox"
+              style="background: #607D8A"
+            ></label>
+            <input type="checkbox" name="red" value="true" id="color3" />
+            <label
+              for="color3"
+              class="colorBox"
+              style="background: #FF7673"
+            ></label>
+            <input type="checkbox" name="orange" value="true" id="color4" />
+            <label
+              for="color4"
+              class="colorBox"
+              style="background: #FFBB5C"
+            ></label>
+            <input type="checkbox" name="yellow" value="true" id="color5" />
+            <label
+              for="color5"
+              class="colorBox"
+              style="background: #FFD74E"
+            ></label>
+            <input type="checkbox" name="green" value="true" id="color6" />
+            <label
+              for="color6"
+              class="colorBox"
+              style="background: #6DE194"
+            ></label>
+            <input type="checkbox" name="aqua" value="true" id="color7" />
+            <label
+              for="color6"
+              class="colorBox"
+              style="background: #63ECDB"
+            ></label>
+            <input type="checkbox" name="blue" value="true" id="color8" />
+            <label
+              for="color8"
+              class="colorBox"
+              style="background: #5ACFF5"
+            ></label>
+            <input type="checkbox" name="purple" value="true" id="color9" />
+            <label
+              for="color9"
+              class="colorBox"
+              style="background: #B072FF"
+            ></label>
+            <input type="checkbox" name="all" value="true" id="color10" />
+
+          </div>
+          <div>
+            <input
+              name="apodo"
+              id="apodo"
+              placeholder="Titulo"
+              type="text"
+              class="input embedsLabel"
+              style="border-radius: 8px; padding: 6px; height: 30px"
+            />
+          </div>
+          <div>
+            <textarea
+              name="apodo"
+              id="apodo"
+              class="embedsLabel"
+              style="border-radius: 8px; "
+              cols="40"
+              rows="3"
+            >Descripción
+            </textarea>
+          </div>
+        </div>
+      </div>
+      <div class="logs">LOGS</div>
+      <div>
+
+        <button class="btn btn-danger" type="submit">Staff</button>
+        <button class="btn btn-success" type="submit">Bots</button>
+      </div>
+      <div
+        style="
+    display: grid; grid-template-columns: 30% 70%"
       >
-        <p>Introdusca el nuevo prefix</p>
-        <input
-          placeholder="&"
-          name="prefix"
-          type="text"
-          class="colorblack"
-          style="border-radius: 5px; padding: 5px"
-        />
-        <button class="btn btn-dark" type="submit"><i
-            class="far fa-save"
-          ></i>Guardar</button>
-      </form>
+        <div>
+          <button
+            style="background-color: #14151A; padding: 5px 12px; font-size: 18px; border-color: #2F3136; border-radius: 10px;"
+          >+ </button>
+        </div>
+        <div>
+          <p>Añalen un boton</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

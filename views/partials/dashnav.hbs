@@ -1,29 +1,42 @@
-<div id="sidemenu" class="menu-collapsed">
-  <div id="header">
-    <div id="title"><span>DePic</span></div>
-    <div id="menu-btm">
-      <div class="btn-hamburger"></div>
-      <div class="btn-hamburger"></div>
-      <div class="btn-hamburger"></div>
-    </div>
-  </div>
-  <div id="profile">
-    <div id="photo"><img
-        src="https://cdn.discordapp.com/attachments/763804175510929469/813806894266974218/DePic_2.png"
-        alt=""
-      /></div>
-    <div id="name"><span>DePic Web</span></div>
-  </div>
-  <div id="menu-items">
-    <div class="item">
-      <a href="">
-        <div class="icon"><img
-            src="https://cdn.discordapp.com/attachments/763804175510929469/813806894266974218/DePic_2.png"
-            alt=""
-          /></div>
-        <div class="title"><span>Depic webs</span></div>
-      </a>
-    </div>
-  </div>
+<div>
+  <div class="nav-item">
+    <a class="items nav-link" href="/dash"><i class="bx bxs-server"></i>
+      Servidores</a></div>
+  <hr style="background-color: #9A9DA0" />
+  <div>
+    <a class="items nav-link" href="/dash/{{servidor.id}}">
+      <img
+        class="img233"
+        src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
+        alt="SERVER LOGO"
+        width="40"
+        height="40"
+      />
+      Servidor</a></div>
+  <hr />
+  <div>
+    <a class="items nav-link" href="/dash/{{servidor.id}}/bienv"><i
+        class="bx bxs-message-square-add"
+      ></i>
+      Bienvenidas</a></div>
+  <hr />
+  <div class="nav-item">
+    <a class="items nav-link" href="/dash/{{servidor.id}}/warn"><i
+        class="bx bx-alarm-exclamation"
+      ></i>
+      Warns</a></div>
+  <hr />
+  <!--div class="nav-item">
+    <a class="items nav-link" href="/dash/{{servidor.id}}/tickets"><i class="bx bxs-movie"></i>
+      Tickets</a></div-->
+
+  <div class="nav-item">
+    <a class="items nav-link" href="/dash/{{servidor.id}}/logs"><i
+        class="bx bx-desktop"
+      ></i>
+      Otros</a></div>
+  <hr />
+  <p style="margin-top: 40px;"><i class="bx bxs-copyright"></i>
+    DePic Companing</p>
 
 </div>

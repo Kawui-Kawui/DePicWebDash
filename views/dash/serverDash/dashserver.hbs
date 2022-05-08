@@ -1,831 +1,116 @@
-<div>
-  <div>
-    <h1 class="serverNav text-center display-3"><img
-        class="img233"
-        src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
-        alt=""
-        width="80"
-        height="80"
-      />
-      {{servidor.name}}</h1>
-    <h1 class="text-center">
-    </h1>
+<div style="padding-top:10px;">
+  <h1>
+    <img
+      class="img233"
+      src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
+      alt="SERVER LOGO"
+      width="80"
+      height="80"
+    />
 
-    <div class="row flechas">
-      <div class="col-sm-6">
-        <a href="/dash">
-          <i class="fas fa-chevron-left fa-2x flecha"> < </i>
-        </a>
-        <!--a href="">
-        <i class="fas fa-redo-alt fa-2x flecha" style="padding-right: 3px;"></i>
-      </a-->
+    {{servidor.name}}</h1>
+  <div class="content">
+    <div class="data CardInfo">
+
+      <h4>Datos del server</h4>
+      <div
+        style="display:grid; grid-template-columns:  repeat(3, 1fr); grid-column-gap: 10px;"
+      >
+        <div>
+          <p>Miembros: {{data.members}}</p>
+        </div>
+        <div>
+          <p>Bots: {{data.bots}}</p>
+        </div>
+        <div>
+          <p>Id: {{data.id}}</p>
+        </div>
+        <div>
+          <p>Text Channel: {{data.textChannel}}</p>
+        </div>
+        <div>
+          <p>Voice Channel: {{data.voiceChannel}}</p>
+        </div>
+        <div>
+          <p>2FA Mods: {{data.MFA}}</p>
+        </div>
+        <div>
+          <p>Boots: {{data.tier}}</p>
+        </div>
+        <div>
+          <p>Verificacion: {{data.verification}}</p>
+        </div>
       </div>
+    </div>
+    <div class="premium CardInfo">
+      <h4>Premiun</h4>
+      {{#if premiun}}
+        <p>Premiun Activado!!! <br />Hasta el 10 de julio </p>
+      {{else}}
+
+        <p>Este server no tiene premiun,
+          <a href="/tienda">deseas compralo aqui</a>
+        </p>
+      {{/if}}
+    </div>
+    <div class="bot CardInfo">
+      <h4>Configuracion del bot</h4>
+
+      <form
+        class="card-text"
+        action="/dash/{{servidor.id}}/client"
+        method="post"
+      >
+        <div
+          style="display:grid; grid-template-columns: repeat(2, 60%); grid-column-gap: 50px;"
+        >
+          <div> <p>Logs: </p> </div>
+          <div> <b class="mentionChannel">{{config.logs}}</b> </div>
+          <div> <p>Bienvenidas:</p></div>
+          <div> <b class="mentionChannel">{{config.welcome}}</b></div>
+          <div> <p>Confeciones: </p> </div>
+          <div> <b class="mentionChannel">{{config.confection}}</b></div>
+          <div> <p>Confeciones Logs: </p> </div>
+          <div> <b class="mentionChannel">{{config.confectionLogs}}</b></div>
+          <div> <p>Sugerencias: </p> </div>
+          <div><b class="mentionChannel">{{config.sugerencias}}</b></div>
+
+          <label for="prefix">Prefix</label>
+          <input
+            placeholder="{{data.prefix}}"
+            name="prefix"
+            id="prefix"
+            type="text"
+            class="input"
+            style="border-radius: 8px; padding: 6px; height: 30px"
+          />
+
+          <label for="nickname">Apodo</label>
+          <input
+            placeholder="{{data.name}}"
+            name="nickname"
+            id="nickname"
+            type="text"
+            class="input"
+            style="border-radius: 8px; padding: 6px; height: 30px"
+          />
+        </div>
+        <div style="display: grid; place-items: center;">
+
+          <button class="btn btn-dark" type="submit">Guardar</button>
+        </div>
+      </form>
+
+      <div
+        style="display:grid; grid-template-columns:  repeat(3, 33%); grid-column-gap: 50px;"
+      >
+
+      </div>
+    </div>
+    <div class="logs CardInfo">
+      <h4>Registro de cambios</h4>
       <div>
-        <a href="/dash/{{servidor.id}}/tickets" class="btn btn-success">< Estas buscando la config de
-          los tickets Picale a este boton</a>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">
-            <img
-              class="img23"
-              src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
-              alt=""
-              width="60"
-              height="60"
-            />Prefix</h5>
-          <p class="card-text">Prefix actual: {{prefixMostrar}} </p>
-          <p>{{Exitoid}}</p>
-          <form
-            class="card-text"
-            action="/dash/{{servidor.id}}/prefix"
-            method="post"
-          >
-            <p>Introdusca el nuevo prefix</p>
-            <input
-              placeholder="&"
-              name="prefix"
-              type="text"
-              class="colorblack"
-              style="border-radius: 5px; padding: 5px"
-            />
-            <button class="btn btn-dark" type="submit"><i
-                class="far fa-save"
-              ></i>Guardar</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><img
-              class="img23"
-              src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
-              alt=""
-              width="60"
-              height="60"
-            />Sugerencias</h5>
-          <p class="">Canal de sugerencias actual:
-            <b class="mentionChannel">@{{su}}</b></p>
-
-          <form class="" action="/dash/{{servidor.id}}/idsss" method="post">
-            <p>Selecione el nuevo canal! </p>
-            <div class="container text-center">
-              <div class="row row-cols-3">
-                <select
-                  style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
-                  id="idssas"
-                  name="idssass"
-                  class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
-                >
-                  <div class="dropdown dropdown">
-                    <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
-                </button-->
-
-                    <div
-                      style="padding: 0 50%;background-color: #17181e; max-height: 50px"
-                      class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
-                      aria-labelledby="navbarDarkDropdownMenuLink"
-                    >
-                      <option value="1"><a
-                          name="idssass"
-                          class="dahserDrop"
-                          style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
-                          class="dropdown-item btn dropsDownBlack"
-                          href="#"
-                        >Seleciona un canal!</a></option>
-                      {{#each canales}}
-                        <option
-                          style="max-height: 190px; padding: 10px 50%;"
-                          value="{{this.id}}"
-                        ><a
-                            name="idssass"
-                            class="dahserDrop"
-                            style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                            class="dropdown-item btn dropsDownBlack"
-                            href="#"
-                          >{{this.name}}</a></option>
-                      {{/each}}
-                    </div>
-                  </div>
-                </select>
-                <h3></h3>
-                <button name="idsss" class="btn btn-success" type="submit"><i
-                    class="far fa-save"
-                  ></i>Guardar</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <hr />
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><img
-              class="img23"
-              src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
-              alt=""
-              width="60"
-              height="60"
-            />Confenciones</h5>
-          <p class="card-text">Canal de confenciones actual:
-            <b class="mentionChannel">@{{co}}</b></p>
-          <!--form class="card-text" action="" method="post">
-            <p>Introdusca la ID del canal</p>
-            <input name="sugest" type="text" class="colorblack" />
-            <button class="btn btn-dark" type="submit">Cambiar</button>
-          </form>-->
-          <form class="" action="/dash/{{servidor.id}}/confe" method="post">
-            <p>Selecione el nuevo canal! </p>
-            <div class="container text-center">
-              <div class="row row-cols-3">
-                <select
-                  style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
-                  id="idssas"
-                  name="confe"
-                  class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
-                >
-                  <div class="dropdown dropdown">
-                    <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
-                </button-->
-
-                    <div
-                      style="padding: 0 50%;background-color: #17181e; max-height: 50px"
-                      class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
-                      aria-labelledby="navbarDarkDropdownMenuLink"
-                    >
-                      <option value="1"><a
-                          name="confe"
-                          class="dahserDrop"
-                          style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
-                          class="dropdown-item btn dropsDownBlack"
-                          href="#"
-                        >Seleciona un canal!</a></option>
-                      {{#each canales}}
-                        <option
-                          style="max-height: 190px; padding: 10px 50%;"
-                          value="{{this.id}}"
-                        ><a
-                            name="confe"
-                            class="dahserDrop"
-                            style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                            class="dropdown-item btn dropsDownBlack"
-                            href="#"
-                          >{{this.name}}</a></option>
-                      {{/each}}
-                    </div>
-                  </div>
-                </select>
-                <h3></h3>
-                <button name="idsss" class="btn btn-success" type="submit"><i
-                    class="far fa-save"
-                  ></i>Guardar</button>
-              </div>
-            </div>
-          </form>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><img
-              class="img23"
-              src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
-              alt=""
-              width="60"
-              height="60"
-            />Confenciones logs</h5>
-          <p class="card-text">Canal de logs de confenciones actual:
-            <b class="mentionChannel">@{{col}}</b></p>
-          <!--form class="card-text" action="" method="post">
-            <p>Introdusca la ID del canal o el nombre</p>
-            <input type="text" class="colorblack" />
-            <button class="btn btn-dark" type="submit">Cambiar</button>
-          </form>-->
-          <form class="" action="/dash/{{servidor.id}}/confel" method="post">
-            <p>Selecione el nuevo canal! </p>
-            <div class="container text-center">
-              <div class="row row-cols-3">
-                <select
-                  style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
-                  id="idssas"
-                  name="confel"
-                  class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
-                >
-                  <div class="dropdown dropdown">
-                    <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
-                </button-->
-
-                    <div
-                      style="padding: 0 50%;background-color: #17181e; max-height: 50px"
-                      class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
-                      aria-labelledby="navbarDarkDropdownMenuLink"
-                    >
-                      <option value="1"><a
-                          name="confel"
-                          class="dahserDrop"
-                          style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
-                          class="dropdown-item btn dropsDownBlack"
-                          href="#"
-                        >Seleciona un canal!</a></option>
-                      {{#each canales}}
-                        <option
-                          style="max-height: 190px; padding: 10px 50%;"
-                          value="{{this.id}}"
-                        ><a
-                            name="confel"
-                            class="dahserDrop"
-                            style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                            class="dropdown-item btn dropsDownBlack"
-                            href="#"
-                          >{{this.name}}</a></option>
-                      {{/each}}
-                    </div>
-                  </div>
-                </select>
-                <h3></h3>
-                <button name="idsss" class="btn btn-success" type="submit"><i
-                    class="far fa-save"
-                  ></i>Guardar</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><img
-              class="img23"
-              src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
-              alt=""
-              width="60"
-              height="60"
-            />Bienvenidas</h5>
-          <p class="card-text">Canal de Bienvenidas actual:
-            <b class="mentionChannel">@{{bi}}</b></p>
-          <!--form class="card-text" action="" method="post">
-            <p>Introdusca la ID del canal o el nombre</p>
-            <input type="text" class="colorblack" />
-            <button class="btn btn-dark" type="submit">Cambiar</button>
-          </form>-->
-          <form
-            class=""
-            action="/dash/{{servidor.id}}/bienvenidas"
-            method="post"
-          >
-            <p>Selecione el nuevo canal! </p>
-            <div class="container text-center">
-              <div class="row row-cols-3">
-                <select
-                  style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
-                  id="idssas"
-                  name="bienvenidas"
-                  class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
-                >
-                  <div class="dropdown dropdown">
-                    <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
-                </button-->
-
-                    <div
-                      style="padding: 0 50%;background-color: #17181e; max-height: 50px"
-                      class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
-                      aria-labelledby="navbarDarkDropdownMenuLink"
-                    >
-                      <option value="1"><a
-                          name="bienvenidas"
-                          class="dahserDrop"
-                          style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
-                          class="dropdown-item btn dropsDownBlack"
-                          href="#"
-                        >Seleciona un canal!</a></option>
-                      {{#each canales}}
-                        <option
-                          style="max-height: 190px; padding: 10px 50%;"
-                          value="{{this.id}}"
-                        ><a
-                            name="bienvenidas"
-                            class="dahserDrop"
-                            style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                            class="dropdown-item btn dropsDownBlack"
-                            href="#"
-                          >{{this.name}}</a></option>
-                      {{/each}}
-                    </div>
-                  </div>
-                </select>
-                <h3></h3>
-                <button name="idsss" class="btn btn-success" type="submit"><i
-                    class="far fa-save"
-                  ></i>Guardar</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><img
-              class="img23"
-              src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
-              alt=""
-              width="60"
-              height="60"
-            />Warns logs</h5>
-          <p class="card-text">Canal de Warns logs actual:
-            <b class="mentionChannel">@{{wal}}</b></p>
-          <!--form class="card-text" action="" method="post">
-            <p>Introdusca la ID del canal o el nombre</p>
-            <input type="text" class="colorblack" />
-            <button class="btn btn-dark" type="submit">Cambiar</button>
-          </form>-->
-          <form class="" action="/dash/{{servidor.id}}/warnl" method="post">
-            <p>Selecione el nuevo canal! </p>
-            <div class="container text-center">
-              <div class="row row-cols-3">
-                <select
-                  style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
-                  id="idssas"
-                  name="warnl"
-                  class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
-                >
-                  <div class="dropdown dropdown">
-                    <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
-                </button-->
-
-                    <div
-                      style="padding: 0 50%;background-color: #17181e; max-height: 50px"
-                      class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
-                      aria-labelledby="navbarDarkDropdownMenuLink"
-                    >
-                      <option value="1"><a
-                          name="warnl"
-                          class="dahserDrop"
-                          style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
-                          class="dropdown-item btn dropsDownBlack"
-                          href="#"
-                        >Seleciona un canal!</a></option>
-                      {{#each canales}}
-                        <option
-                          style="max-height: 190px; padding: 10px 50%;"
-                          value="{{this.id}}"
-                        ><a
-                            name="warnl"
-                            class="dahserDrop"
-                            style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                            class="dropdown-item btn dropsDownBlack"
-                            href="#"
-                          >{{this.name}}</a></option>
-                      {{/each}}
-                    </div>
-                  </div>
-                </select>
-                <h3></h3>
-                <button name="idsss" class="btn btn-success" type="submit"><i
-                    class="far fa-save"
-                  ></i>Guardar</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <!--/div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><img
-              class="img23"
-              src="https://cdn.discordapp.com/icons/{{servidor.id}}/{{servidor.icon}}.png"
-              alt=""
-              width="60"
-              height="60"
-            />Bienvenidas</h5>
-          <p class="card-text">Canal de Bienvenidas actual: <b class="mentionChannel">@{{bi}}</b></p>
-          <form class="card-text" action="/dash/{{servidor.id}}/bienve" method="post">
-            <!--p>Introdusca la ID del canal o el nombre</p>
-            <input type="text" class="colorblack" /->
-            <textarea name="bienvenidatext" type="text" cols="100" rows="10"></textarea>
-            <button class="btn btn-dark" type="submit">Cambiar</button>
-          </form>
-        </div>
-      </div-->
-  </div>
-</div>
-<hr />
-<div class="card">
-  <h2 class="text-center" style="margin-top: 10px;">Sistema de Warns</h2>
-  <hr />
-
-  <form class="" action="/dash/{{servidor.id}}/warnC" method="post">
-    <div class="row row-cols-3" style="margin: 15px">
-      <div>
-        <p class="text-center">Ban Automatico</p>
-        <div class="divCard" style="padding: 20px; margin: 20px 20px">
-          <p>
-            <label class="selectionLabel">Activado:
-              <select
-                style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
-                id="idssas"
-                name="warnBA"
-                class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
-              >
-                <div class="dropdown dropdown">
-                  <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
-                </button-->
-
-                  <div
-                    style="padding: 0 50%;background-color: #17181e; max-height: 50px"
-                    class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
-                    aria-labelledby="navbarDarkDropdownMenuLink"
-                  >
-                    <option value="1"><a
-                        name="warnBA"
-                        class="dahserDrop"
-                        style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
-                        class="dropdown-item btn dropsDownBlack"
-                        href="#"
-                      >Seleciona el estado</a>
-                    </option>
-                    <option
-                      style="max-height: 190px; padding: 10px 50%;"
-                      value="true"
-                    ><a
-                        name="warnBA"
-                        class="dahserDrop"
-                        style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                        class="dropdown-item btn dropsDownBlack"
-                        href="#"
-                      >Activado</a></option>
-                    <option
-                      style="max-height: 190px; padding: 10px 50%;"
-                      value="false"
-                    ><a
-                        name="warnBA"
-                        class="dahserDrop"
-                        style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                        class="dropdown-item btn dropsDownBlack"
-                        href="#"
-                      >Desactivar</a></option>
-                  </div>
-                </div>
-              </select>
-            </label>
-          </p>
-          <p>
-            <label class="selectionLabel">Warns para el ban Automatico:
-              <select
-                style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
-                id="idssas"
-                name="warnBC"
-                class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
-              >
-                <div class="dropdown dropdown">
-                  <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
-                </button-->
-
-                  <div
-                    style="padding: 0 50%;background-color: #17181e; max-height: 50px"
-                    class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
-                    aria-labelledby="navbarDarkDropdownMenuLink"
-                  >
-                    <option value="1"><a
-                        name="warnBC"
-                        class="dahserDrop"
-                        style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
-                        class="dropdown-item btn dropsDownBlack"
-                        href="#"
-                      >Seleciona una cantidad!</a>
-                    </option>
-                    {{#each contadorA20}}
-
-                      <option
-                        style="max-height: 190px; padding: 10px 50%;"
-                        value="{{this.number}}"
-                      ><a
-                          name="warnBC"
-                          class="dahserDrop"
-                          style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                          class="dropdown-item btn dropsDownBlack"
-                          href="#"
-                        >{{this.number}}</a>
-                      </option>
-                    {{/each}}
-                  </div>
-                </div>
-              </select>
-            </label></p>
-        </div>
-      </div>
-      <div>
-        <p class="text-center">Role Automatico</p>
-        <div class="divCard" style="padding: 20px; margin: 20px 20px">
-          <p>
-            <label class="selectionLabel">Activado:
-              <select
-                style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
-                id="idssas"
-                name="warnRA"
-                class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
-              >
-                <div class="dropdown dropdown">
-                  <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
-                </button-->
-
-                  <div
-                    style="padding: 0 50%;background-color: #17181e; max-height: 50px"
-                    class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
-                    aria-labelledby="navbarDarkDropdownMenuLink"
-                  >
-                    <option value="1"><a
-                        name="warnCRA"
-                        class="dahserDrop"
-                        style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
-                        class="dropdown-item btn dropsDownBlack"
-                        href="#"
-                      >Seleciona el estado</a>
-                    </option>
-                    <option
-                      style="max-height: 190px; padding: 10px 50%;"
-                      value="true"
-                    ><a
-                        name="warnRA"
-                        class="dahserDrop"
-                        style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                        class="dropdown-item btn dropsDownBlack"
-                        href="#"
-                      >Activado</a></option><option
-                      style="max-height: 190px; padding: 10px 50%;"
-                      value="false"
-                    ><a
-                        name="warnRA"
-                        class="dahserDrop"
-                        style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                        class="dropdown-item btn dropsDownBlack"
-                        href="#"
-                      >Desactivar</a></option>
-                  </div>
-                </div>
-              </select>
-            </label>
-          </p>
-          <p>
-            <label class="selectionLabel">
-              Warns para el rol Automatico:
-              <select
-                style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
-                id="warnRC"
-                name="warnRC"
-                class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
-              >
-                <div class="dropdown dropdown">
-                  <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
-                </button-->
-
-                  <div
-                    style="padding: 0 50%;background-color: #17181e; max-height: 50px"
-                    class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
-                    aria-labelledby="navbarDarkDropdownMenuLink"
-                  >
-                    <option value="1"><a
-                        name="warnRC"
-                        class="dahserDrop"
-                        style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
-                        class="dropdown-item btn dropsDownBlack"
-                        href="#"
-                      >Seleciona una cantidad!</a>
-                    </option>
-                    {{#each contadorA20}}
-
-                      <option
-                        style="max-height: 190px; padding: 10px 50%;"
-                        value="{{this.number}}"
-                      ><a
-                          name="warnRC"
-                          class="dahserDrop"
-                          style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                          class="dropdown-item btn dropsDownBlack"
-                          href="#"
-                        >{{this.number}}</a>
-                      </option>
-                    {{/each}}
-                  </div>
-                </div>
-              </select>
-            </label>
-          </p>
-          <p>
-            <label class="selectionLabel">Rol:
-              <select
-                style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
-                id="idssas"
-                name="warnR"
-                class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
-              >
-                <div class="dropdown dropdown">
-                  <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
-                </button-->
-
-                  <div
-                    style="padding: 0 50%;background-color: #17181e; max-height: 50px"
-                    class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
-                    aria-labelledby="navbarDarkDropdownMenuLink"
-                  >
-
-                    <option value="1"><a
-                        name="warnR"
-                        class="dahserDrop"
-                        style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
-                        class="dropdown-item btn dropsDownBlack"
-                        href="#"
-                      >Seleciona el rol!</a>
-                    </option>
-                    {{#each roless}}
-
-                      <option
-                        style="max-height: 190px; padding: 10px 50%;"
-                        value="{{this.id}}"
-                      ><a
-                          name="warnR"
-                          class="dahserDrop"
-                          style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                          class="dropdown-item btn dropsDownBlack"
-                          href="#"
-                        >{{this.name}}</a>
-                      </option>
-                    {{/each}}
-                  </div>
-                </div>
-              </select>
-            </label>
-          </p>
-        </div>
-      </div>
-      <div>
-        <p class="text-center">Kick Automatico</p>
-        <div class="divCard" style="padding: 20px; margin: 20px 20px">
-          <p>
-
-            <label class="selectionLabel">Activado:
-              <select
-                style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
-                id="idssas"
-                name="warnKA"
-                class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
-              >
-                <div class="dropdown dropdown">
-                  <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
-                </button-->
-
-                  <div
-                    style="padding: 0 50%;background-color: #17181e; max-height: 50px"
-                    class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
-                    aria-labelledby="navbarDarkDropdownMenuLink"
-                  >
-                    <option value="1"><a
-                        name="warnKA"
-                        class="dahserDrop"
-                        style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
-                        class="dropdown-item btn dropsDownBlack"
-                        href="#"
-                      >Seleciona el estado</a>
-                    </option>
-                    <option
-                      style="max-height: 190px; padding: 10px 50%;"
-                      value="true"
-                    ><a
-                        name="warnKA"
-                        class="dahserDrop"
-                        style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                        class="dropdown-item btn dropsDownBlack"
-                        href="#"
-                      >Activado</a></option><option
-                      style="max-height: 190px; padding: 10px 50%;"
-                      value="true"
-                    ><a
-                        name="warnKA"
-                        class="dahserDrop"
-                        style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                        class="dropdown-item btn dropsDownBlack"
-                        href="#"
-                      >Desactivar</a></option>
-                  </div>
-                </div>
-              </select>
-            </label>
-          </p>
-          <p>
-            <label class="selectionLabel">Warns para el kick Automatico:
-              <select
-                style="padding: 5px 1%;background-color: #17181e; max-height: 190px;"
-                id="idssas"
-                name="warnKC"
-                class="form-select form-select-lg channelDrop dahserDrop btn nav-link dropdown-toggle btn-outline-light"
-              >
-                <div class="dropdown dropdown">
-                  <!--button style="padding: 0 120% ;" class=" btn nav-link dropdown-toggle btn-outline-light" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Cambia el canal! </button>
-                </button-->
-
-                  <div
-                    style="padding: 0 50%;background-color: #17181e; max-height: 50px"
-                    class="dropdown-menu dropsDownBlack dahserDrop dropdown-menu-dark"
-                    aria-labelledby="navbarDarkDropdownMenuLink"
-                  >
-                    <option value="1"><a
-                        name="warnKC"
-                        class="dahserDrop"
-                        style="padding: 0 10%;background-color: #17181e;font-size: 107px; color: #ACACAC"
-                        class="dropdown-item btn dropsDownBlack"
-                        href="#"
-                      >Seleciona una cantidad!</a>
-                    </option>
-                    {{#each contadorA20}}
-
-                      <option
-                        style="max-height: 190px; padding: 10px 50%;"
-                        value="{{this.number}}"
-                      ><a
-                          name="warnKC"
-                          class="dahserDrop"
-                          style="padding: 10px 5%;background-color: #17181e;font-size: 107px; color: #ACACAC;max-height: 190px;"
-                          class="dropdown-item btn dropsDownBlack"
-                          href="#"
-                        >{{this.number}}</a>
-                      </option>
-                    {{/each}}
-                  </div>
-                </div>
-              </select>
-            </label>
-
-          </p>
-        </div>
-      </div>
-      <div>
-
-      </div>
-      <button name="idsss" class="btn btn-success" type="submit"><i
-          class="far fa-save"
-        ></i>Guardar</button>
-    </div>
-  </form>
-  <hr />
-  <div>
-    <h2 class="text-center">Configuracion actual</h2>
-    <div
-      class="row row-cols-3 text-center"
-      style="margin: 10px; padding-top: 15px"
-    >
-      <div class="divCard" style="background-color: #151515;">
-        <h3>Roles</h3>
-        <p>Rol Automatico:
-          {{allConfig.role}}<br />
-          Warns Necesarios:
-          {{allConfig.roleTime}}<br />
-          Activado:
-          {{allConfig.roleA}}</p>
-      </div>
-      <div class="divCard" style="background-color: #151515;">
-        <h3>Ban</h3>
-        <p>Warns Necesarios:
-          {{allConfig.bantime}}<br />Activado:
-          {{allConfig.ban}}</p>
-      </div>
-      <div class="divCard" style="background-color: #151515; ">
-        <h3>Kick</h3>
-        <p>Warns Necesarios:
-          {{allConfig.kicktime}}<br />Activado:
-          {{allConfig.kick}}</p>
+        <p class="logs" id="LOGS_{{success.type}}">{{success.msg}}</p>
       </div>
     </div>
   </div>
