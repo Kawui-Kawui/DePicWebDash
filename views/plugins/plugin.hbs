@@ -1,0 +1,78 @@
+<link rel="stylesheet"
+    href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/hybrid.min.css">
+<script
+    src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<div class="divCard container" style="padding-bottom: 20px;">
+    <div class="d-grid gap-10 d-lg-flex justify-content-lg
+        justify-content-between zeromargin" style="gap: 4px 10px; margin: 10px">
+        <h1>
+            <img style="width: 80px;" src="{{#if plugin.img}}
+                {{plugin.img}}
+                {{else}}
+                https://uploads.sitepoint.com/wp-content/uploads/2016/06/1464795300wordpress-plugin.gif
+                {{/if}}" alt="">{{plugin.name}}
+        </h1>
+        <p class="vers text-center " style="padding-top: 14px"><a
+                href="{{plugin.license_url}}">{{plugin.license}}</a>
+            License</p>
+    </div>
+    <div class="d-grid gap-10 d-lg-flex justify-content-lg-end" style="gap: 4px
+        10px;">
+        <a href="/plugins" class="btn btn-sm btn-light">< Back</a>
+        <a href="{{plugin.file}}" class="btn btn-info btn-sm"
+            download="{{plugin.name}}.dll">Download</a>
+        <a style="margin-right: 10px;" href="archivo.jpg" class="btn btn-info btn-sm"
+            download="Nombre-del-archivo">Source Code</a>
+    </div>
+    <nav>
+
+        <div class="nav nav-tabs" id="nav-tab-lang" role="tablist">
+            {{#each plugin.lenguages}}
+            <button class="nav-link tabs" id="nav-{{this.id}}-tab"
+                onclick="tablang(`{{this.id}}`)"
+                style="margin-left: 10px;"
+                data-bs-toggle="tab" data-bs-target="#nav-{{this.id}}"
+                type="button"
+                role="tab" aria-controls="nav-{{this.id}}" aria-selected="true">{{this.id}}</button>
+            {{/each}}
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        {{#each plugin.lenguages}}
+        <div class="tab-pane fade" id="nav-{{this.id}}" role="tabpanel"
+            aria-labelledby="nav-{{this.id}}-tab" tabindex="0">
+            <div style="padding-bottom: 20px;">
+            <h3>{{this.titles.desc}}</h3>
+            {{this.desc}}
+            </div>
+            <br >
+            <div style="padding-bottom: 20px;">
+                <h3>{{this.titles.config}}</h3>
+                <pre><code class="xml">{{this.config}}</code></pre>
+                <a href="{{this.config_file}}" class="btn btn-info btn-sm"
+            download="Uconomy.configuration.xml">Download</a>
+            </div>
+            <div>
+                <h3>{{this.titles.translates}}</h3>
+                <pre><code class="xml">{{this.translates}}</code></pre>
+                <a href="{{this.translates_file}}" class="btn btn-info btn-sm"
+            download="{{this.name}}.{{this.id}}.translation.xml">Download</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+
+<script>    
+    document.getElementById("nav-es-tab").classList.add("active")
+    document.getElementById("nav-es").classList.add("show", "active")
+    function tablang(lang) {
+        document.getElementsByClassName("tabs active")[0].classList.remove("active")
+        document.getElementsByClassName("show")[0].classList.remove("show", "active")
+        document.getElementById(`nav-${lang}-tab`).classList.add("active")
+        document.getElementById(`nav-${lang}`).classList.add("show", "active")
+        
+    }
+</script>

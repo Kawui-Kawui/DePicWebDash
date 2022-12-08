@@ -22,7 +22,6 @@
         "mongodb": "^3.6.5",
         "mongoose": "^5.12.2",
         "morgan": "^1.10.0",
-        "package.json": "^2.0.1",
         "passport": "^0.4.1",
         "passport-discord": "^0.1.4"
     },

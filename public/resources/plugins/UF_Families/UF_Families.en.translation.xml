@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Translations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Translation Id="you_were_invited_into_family" Value="[Families] You were invited to {0} family by {1}" />
+  <Translation Id="you_invited_player_into_family" Value="[Families] You invited {0} to {1} family" />
+  <Translation Id="you_removed_player_from_family" Value="[Families] You removed {0} from {1} family" />
+  <Translation Id="you_were_removed_from_family" Value="[Families] You were from {0} family by {1}" />
+  <Translation Id="use_invite_syntax" Value="[Families] Use {0} to accept or cancel the invitation" />
+  <Translation Id="you_canceled_invite_request" Value="[Families] You canceled the invite to {0} family" />
+  <Translation Id="you_accepted_invite_request" Value="[Families] You accepted the invite to {0} family" />
+  <Translation Id="your_invite_request_canceled" Value="[Families] Your invite to {0} family was canceled by {1}" />
+  <Translation Id="your_invite_request_accepted" Value="[Families] Your invite to {1} family was accepted by {0}" />
+  <Translation Id="joined_family_notification" Value="[Families] {0} joined to {1} family" />
+  <Translation Id="left_family_notification" Value="[Families] {0} left {1} family" />
+  <Translation Id="dont_have_any_family_invite_requests" Value="[Families] you dont have any family invite requests!" />
+  <Translation Id="name_not_valid" Value="[Families] Given name is not valid!" />
+  <Translation Id="avatar_not_valid" Value="[Families] Given avatar url is not valid!" />
+  <Translation Id="successfully_changed_data" Value="[Families] The {0} of your family was changed!" />
+  <Translation Id="leader_cant_leave_family" Value="[Families] You can't leave a family while being a leader!" />
+  <Translation Id="want_leave_family" Value="[Families] You really want to leave {0} family?" />
+  <Translation Id="want_delete_family" Value="[Families] You really want to delete {0} family?" />
+  <Translation Id="use_to_answer_the_request" Value="[Families] Use /familyrequest [yes|no] to {0} your family." />
+  <Translation Id="no_family_management_requests" Value="[Families] You don't have any family leaving/deleting family requests!" />
+  <Translation Id="left_family_successful" Value="[Families] You successfully left {0} family!" />
+  <Translation Id="deleted_family_successful" Value="[Families] You successfully deleted {0} family!" />
+  <Translation Id="your_family_was_deleted" Value="[Families] Your {0} family was deleted!" />
+  <Translation Id="family_new_level" Value="[Families] Congratulations, your family has reached a new level! Family level is now {0}!" />
+  <Translation Id="family_chat_on" Value="[Families] Family chat was turned on! Every message written into AREA chat will be relayed to other members!" />
+  <Translation Id="family_chat_off" Value="[Families] Family chat was turned off! Messages written into AREA chat won't be relayed to other members!" />
+  <Translation Id="not_in_family_cant_manage_chat" Value="[Families] You cannot turn on/off your family chat because you are not a member of any family!" />
+  <Translation Id="family_chat_message" Value="[{0} Chat]{1}: {2}" />
+  <Translation Id="you_were_kicked_from_family" Value="[Families] You were kicked from {0} family by {1}" />
+  <Translation Id="was_kicked_from_family" Value="[Families] {0} was kicked from your family by {1}" />
+  <Translation Id="somebody_is_using_storage" Value="[Families] Somebody is already using the family storage. Wait for him to finish!" />
+  <Translation Id="not_enough_money_to_withdraw" Value="[Families] Your family doesn't have enough money for that withdrawal!" />
+  <Translation Id="not_enough_money_to_deposit" Value="[Families] You don't have enough money for that deposit!" />
+  <Translation Id="invalid_money_amount" Value="[Families] Invalid money amount! : {0}" />
+  <Translation Id="more_score_to_next_level" Value="[Families] Your family earned {0} Score, {1} more needed for next level!" />
+  <Translation Id="setting_default_logo" Value="[Families] Default logo was set!" />
+</Translations>

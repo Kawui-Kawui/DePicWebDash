@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Translations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Translation Id="list_usage" Value="/jobs &lt;private | public&gt; &lt;page&gt;" />
+  <Translation Id="join_apply_usage" Value="/jjob &lt;job name&gt;" />
+  <Translation Id="accept_usage" Value="/ajob &lt;player name&gt;" />
+  <Translation Id="kick_usage" Value="/kjob &lt;player name&gt;" />
+  <Translation Id="admin_usage" Value="/joba &lt;add | remove | clear&gt; &lt;job name&gt; &lt;player name&gt;" />
+  <Translation Id="format_error" Value="Unable to convert {0} to a number." />
+  <Translation Id="overflow_error" Value="{0} is too big of a number." />
+  <Translation Id="next_page_notification" Value="Next page: &quot;/Jobs {0} {1}&quot;." />
+  <Translation Id="pub_job_notification" Value="{0}" />
+  <Translation Id="priv_job_notification" Value="{0}" />
+  <Translation Id="end_of_list" Value="You have reached the end of the {0} jobs." />
+  <Translation Id="unexistant_page" Value="That page does not exist." />
+  <Translation Id="error_already_in_a_job" Value="You already are in a job!" />
+  <Translation Id="error_already_in_a_job_admin" Value="You cannot make a player have 2 jobs!" />
+  <Translation Id="error_leader_of_a_job" Value="You are the leader of a job, and may not join other jobs!" />
+  <Translation Id="error_leader_of_a_job_admin" Value="That player is the leader of a job and may not join other jobs." />
+  <Translation Id="error_already_applying" Value="You are still applying to another job!" />
+  <Translation Id="error_leader_offline" Value="Unable to send request to join {0}, no leader is online." />
+  <Translation Id="error_job_not_found" Value="Unable to find a job known as {0}" />
+  <Translation Id="error_not_in_a_job" Value="You have not yet joined a job!" />
+  <Translation Id="error_player_not_applying" Value="That player is not applying to your job." />
+  <Translation Id="error_invalid_job_in_storage" Value="Stored job that player was applying to does not exist anymore." />
+  <Translation Id="error_not_leader_of_job" Value="You are not the leader of {0}. You may not accept that request." />
+  <Translation Id="error_player_not_in_job" Value="Unable to remove player from the job {0}." />
+  <Translation Id="error_contact_admin" Value="An error has occured, please contact an admin about this." />
+  <Translation Id="notification_quiet_joined_job" Value="You have joined the job {0}." />
+  <Translation Id="notification_quiet_joined_job_admin" Value="{0} has joined the job {1}." />
+  <Translation Id="notification_global_joined_job" Value="{0} has joined the job {1}." />
+  <Translation Id="notification_player_applying" Value="{0} wants to join your job." />
+  <Translation Id="notification_applied_to_job" Value="You have sent a request to join the job {0}." />
+  <Translation Id="notification_left_job" Value="You left the job {0}." />
+  <Translation Id="notification_accepted_application" Value="You have accepted the application of {0}." />
+  <Translation Id="notification_kicked" Value="You have kicked {0} from the job(s) you are a leader of." />
+</Translations>

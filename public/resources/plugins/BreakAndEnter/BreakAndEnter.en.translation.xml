@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Translations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Translation Id="no_object" Value="No object was found in your line of sight." />
+  <Translation Id="structure_removed" Value="Structure removed successfully." />
+  <Translation Id="barricade_removed" Value="Barricade removed successfully." />
+  <Translation Id="invalid_destroy" Value="The object that you are looking at is not a barricade nor a structure." />
+  <Translation Id="invalid_door" Value="The object that you are looking at is not a door." />
+  <Translation Id="door_toggle" Value="Door {0}." />
+  <Translation Id="storage_open" Value="Opened storage." />
+  <Translation Id="invalid_storage" Value="The object that you are looking at is not a storage unit." />
+</Translations>

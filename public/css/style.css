@@ -522,3 +522,52 @@ body::-webkit-scrollbar-thumb {
         border-radius: 25rem 25rem;
     }
 }
+
+.vers {
+    color: #727272;
+    font-size: 80%;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.zeromargin {
+    margin: 0px
+}
+.plugins-card {
+    background-color:rgb(8, 8, 8);
+    border-radius: 4%;
+}
+.tabs {
+    transition: 0.5s;
+    border-style: none;
+    background-color: #101014;
+}
+.tabs:hover {
+    background-color: #232327;
+    padding-right: 24px;
+    border-radius: 0%;
+    border-style: none;
+}
+.tabs::after {
+    padding-right: 0px;
+    border-style: none;
+}
+.tab-content {
+    margin: 20px 20px;
+}
+.active {
+    transition: 0.5s;
+}
+.show {
+    transition: 0.5s
+}
+.cardPlugin:hover {
+    background-color: #181818;
+    transition: 0.5s;
+}
+.cardPlugin:hover {
+    transition: 0.5s;
+}
+.vs-pills {
+    background-color: #181818;
+}

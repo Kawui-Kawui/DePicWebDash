@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Translations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Translation Id="error_usage_rperm" Value="Invalid command syntax." />
+  <Translation Id="error_duplicate_group" Value="That group already exists!" />
+  <Translation Id="error_duplicate_permission" Value="The group {0} already has that permission!" />
+  <Translation Id="error_notfound_group" Value="That group does not exist!" />
+  <Translation Id="error_notfound_permission" Value="The group does not have the permission {0}." />
+  <Translation Id="error_same_color" Value="The group {0} already has that color!" />
+  <Translation Id="error_same_prefix" Value="The group {0} already has that prefix!" />
+  <Translation Id="error_same_suffix" Value="The group {0} already has that suffix!" />
+  <Translation Id="error_same_parentgroup" Value="The group {0} already has that parentgroup!" />
+  <Translation Id="error_same_id" Value="The group {0} already has that ID or another group already exists with that name!" />
+  <Translation Id="error_same_displayname" Value="The group {0} already has that display name!" />
+  <Translation Id="error_invalid_color" Value="The color {0} is invalid." />
+  <Translation Id="error_invalid_number" Value="{0} is not a number!" />
+  <Translation Id="error_unknown" Value="An unknown error has happened! O.O" />
+  <Translation Id="error_command_disabled" Value="That command has been disabled by the server in the configuration." />
+  <Translation Id="notification_success_group_create" Value="Permission group {0} was created successfully!" />
+  <Translation Id="notification_success_group_delete" Value="Permission group {0} was deleted successfully!" />
+  <Translation Id="notification_permission_added" Value="Permission {0} was added to the group {1}." />
+  <Translation Id="notification_permission_removed" Value="Permission {0} was removed from the group {1}." />
+  <Translation Id="notification_color_change" Value="Chat color was changed for the group {0}." />
+  <Translation Id="notification_prefix_change" Value="Prefix was changed for the group {0}." />
+  <Translation Id="notification_suffix_change" Value="Suffix was changed for the group {0}." />
+  <Translation Id="notification_parentgroup_change" Value="Parent group was changed for the group {0}." />
+  <Translation Id="notification_id_change" Value="ID was changed for the group {0}." />
+  <Translation Id="notification_displayname_change" Value="Display name was changed for the group {0}." />
+  <Translation Id="notification_details_group" Value="ID: {0}, Display Name: {1}, Prefix: {2}, Suffix: {3}, Color: {4}, Parent Group: {5}, Priority: {6}, {7} Members and {8} Permissions." />
+  <Translation Id="notification_list_start_players" Value="Players in {0}:" />
+  <Translation Id="notification_list_start_perms" Value="Permissions in {0}:" />
+  <Translation Id="notification_list_perms" Value="Permission: {0}, Cooldown: {1}." />
+  <Translation Id="notification_list_players" Value="Player: {0}" />
+  <Translation Id="notification_list_no_players" Value="There are no players in that group." />
+  <Translation Id="notification_list_no_perms" Value="There are no permissions in that group." />
+</Translations>

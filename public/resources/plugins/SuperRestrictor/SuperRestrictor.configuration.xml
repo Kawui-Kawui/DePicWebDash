@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SuperRestrictorConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <RestrictedItems>
+    <Item BypassPermission="bypass.permission" Message="Message3">1</Item>
+    <Item>1</Item>
+  </RestrictedItems>
+  <RestrictedCrafts>
+    <Item BypassPermission="bypass.permission" Message="Message4">1</Item>
+    <Item>1</Item>
+  </RestrictedCrafts>
+  <RestrictedVehicles>
+    <Vehicle IgnorePermission="bypass.permission" Message="Message5">1</Vehicle>
+    <Vehicle>1</Vehicle>
+  </RestrictedVehicles>
+  <RestrictedNames>
+    <player name="Name" BypassPermission="bypass.permission" Message="Message1" />
+    <player name="Name" />
+  </RestrictedNames>
+  <RestrictedWords>
+    <word name="Word" BypassPermission="bypass.permission" Message="Message2" />
+    <word name="Word" />
+  </RestrictedWords>
+  <IgnoreAdmins>false</IgnoreAdmins>
+</SuperRestrictorConfiguration>

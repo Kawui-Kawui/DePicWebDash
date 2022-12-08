@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Translations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Translation Id="WarningNullUser" Value="&lt;color=red&gt;ADVERTENCIA |&lt;/color&gt; No hay ningún usuario en tu contra" />
+  <Translation Id="WarningGunError" Value="&lt;color=red&gt;ADVERTENCIA |&lt;/color&gt; Debes tener una arma para robar" />
+  <Translation Id="SuccessSearch" Value="&lt;color=green&gt;ÉXITO |&lt;/color&gt; Buscado con éxito" />
+  <Translation Id="Wanted" Value="&lt;color=green&gt;PRECAUCIÓN |&lt;/color&gt; Estas en busqueda" />
+  <Translation Id="SuccessRob" Value="&lt;color=green&gt;ÉXITO |&lt;/color&gt; Has robado!" />
+  <Translation Id="Robbed" Value="&lt;color=green&gt;PRECAUCIÓN |&lt;/color&gt; HAS SIDO ROBADO!" />
+  <Translation Id="WarningClamp" Value="&lt;color=green&gt;ADVERTENCIA |&lt;/color&gt; El jugador opuesto debe ser esposado " />
+</Translations>

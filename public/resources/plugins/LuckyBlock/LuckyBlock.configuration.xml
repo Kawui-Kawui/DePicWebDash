@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LuckyBlockConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <items>
+    <unsignedShort>363</unsignedShort>
+    <unsignedShort>81</unsignedShort>
+  </items>
+  <animals>
+    <unsignedShort>1</unsignedShort>
+    <unsignedShort>3</unsignedShort>
+  </animals>
+  <barricades>
+    <unsignedShort>45</unsignedShort>
+    <unsignedShort>30</unsignedShort>
+  </barricades>
+  <allowItems>true</allowItems>
+  <allowAnimals>true</allowAnimals>
+  <allowBarricades>true</allowBarricades>
+  <blockId>366</blockId>
+</LuckyBlockConfiguration>

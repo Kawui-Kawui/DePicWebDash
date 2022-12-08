@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FamiliesPluginConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PrimaryUIKey>480</PrimaryUIKey>
+  <SecondaryUIKey>481</SecondaryUIKey>
+  <MessagesIconUrl>https://i.imgur.com/UGSk0cm.png</MessagesIconUrl>
+  <ManagerRankCanManageMembers>true</ManagerRankCanManageMembers>
+  <BadWords>
+    <string>nigger</string>
+    <string>shit</string>
+    <string>motherfucker</string>
+    <string>whore</string>
+    <string>bitch</string>
+    <string>mother</string>
+    <string>mom</string>
+    <string>fuck</string>
+    <string>dick</string>
+    <string>slut</string>
+  </BadWords>
+  <ServerMoneyCurrency>$</ServerMoneyCurrency>
+  <FamilyStorageSize_X>10</FamilyStorageSize_X>
+  <FamilyStorageSize_Y>6</FamilyStorageSize_Y>
+  <ScoreGivingRefreshRateSeconds>1800</ScoreGivingRefreshRateSeconds>
+  <ScoreGivingBasicAmount>150</ScoreGivingBasicAmount>
+  <ScoreGivingAmountForOnlinePlayer>5</ScoreGivingAmountForOnlinePlayer>
+  <UseUconomyForFamilyBank>false</UseUconomyForFamilyBank>
+</FamiliesPluginConfiguration>

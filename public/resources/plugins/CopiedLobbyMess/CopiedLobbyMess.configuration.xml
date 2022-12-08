@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Logging>true</Logging>
+  <InvisibleRocket>false</InvisibleRocket>
+  <HidePlugins>false</HidePlugins>
+  <MessPlugins>false</MessPlugins>
+  <Plugins>
+    <string>Plugins removed by</string>
+    <string>CopiedLobbyMess</string>
+    <string>AtiLion is gay</string>
+  </Plugins>
+  <HideWorkshop>true</HideWorkshop>
+  <MessWorkshop>false</MessWorkshop>
+  <Workshop>
+    <string>936182532</string>
+    <string>1112690830</string>
+  </Workshop>
+  <MessGamemode>false</MessGamemode>
+  <Gamemode>Nothing you have ever seen before</Gamemode>
+  <HideConfig>true</HideConfig>
+  <MessConfig>false</MessConfig>
+  <IsPVP>true</IsPVP>
+  <HasCheats>false</HasCheats>
+  <Difficulty>NRM</Difficulty>
+  <CameraMode>2Pp</CameraMode>
+  <GoldOnly>false</GoldOnly>
+  <HasBattleye>true</HasBattleye>
+  <IsVanilla>false</IsVanilla>
+</Configuration>

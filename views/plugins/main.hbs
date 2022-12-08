@@ -1,0 +1,89 @@
+<h1 class="text-center">Unturned Tutorial</h1>
+<nav style="padding-bottom: 10px;">
+
+  <div class="nav nav-tabs" id="nav-tab-lang" role="tablist">
+    {{#each info}}
+    <button class="nav-link tabs" id="nav-{{this.id}}-tab"
+      onclick="tablang(`{{this.id}}`)" style="margin-left: 10px;"
+      data-bs-toggle="tab" data-bs-target="#nav-{{this.id}}" type="button"
+      role="tab" aria-controls="nav-{{this.id}}"
+      aria-selected="true">{{this.name}}</button>
+    {{/each}}
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  {{#each info}}
+  {{#if this.plugin}}
+  <div class="tab-pane fade" id="nav-{{this.id}}" role="tabpanel"
+    aria-labelledby="nav-{{this.id}}-tab" tabindex="0">
+    <div style="padding-bottom: 20px;">
+      <h3 class="text-center">{{this.name}}</h3>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        {{#each this.plugin}}
+        <div class="col" style="padding-bottom: 10px;">
+          <div class="card h-100 cardPlugin">
+            {{#if this.img}}
+            <imgss class="card-img-top" alt="..." src="{{this.img}}"></imgss>
+            {{else}}
+            <img class="card-img-top" style="background-color: rgb(79, 132,
+              245);"
+              alt="..."
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6nSrTo0CvxkFw93auu28RMhF6QD7WzVGM0ynRkzt4NHRgbxsNroWklvN7XdkpraTYVmI&usqp=CAU"
+              />
+            {{/if}}
+            <div class="card-body">
+              <h5 class="card-title">{{this.name}}</h5>
+              <p class="card-text">Version:
+                {{this.version}}
+                <br />
+                License:
+                <a href="">{{this.license}}</a>
+              </p>
+              <small><a href="{{this.code}}">Source Code</a></small>
+              <a href="/plugins/{{this.id}}" style="" class="btn btn-info
+                btn-sm">Docs</a>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <div class="tab-pane fade" id="nav-{{this.id}}" role="tabpanel"
+    aria-labelledby="nav-{{this.id}}-tab" tabindex="0">
+    <div style="padding-bottom: 20px;">
+      <h3>{{this.name}}</h3>
+
+    </div>
+  </div>
+  {{/if}}
+  {{/each}}
+</div>
+
+<script>
+  document.getElementById("nav-0").classList.add("show", "active")
+  document.getElementById("nav-0-tab").classList.add("active");
+  document.getElementById("v-pills-es-R").classList.add("show", "active")
+  document.getElementById("v-pills-es-T").classList.add("show", "active")
+  document.getElementById("vs-pills-es-T").classList.add("active");
+  document.getElementById("vs-pills-es-R").classList.add("active");
+  function tablang(id) {
+    console.log(id)
+        document.getElementsByClassName("tabs active")[0].classList.remove("active")
+        document.getElementsByClassName("show")[0].classList.remove("show", "active")
+        document.getElementById(`nav-${id}-tab`).classList.add("active")
+        document.getElementById(`nav-${id}`).classList.add("show", "active")
+  }
+
+  function pillslang(id) {
+        document.getElementsByClassName("vs-pills active")[0].classList.remove("active")
+        document.getElementsByClassName("pills show")[0].classList.remove("show", "active")
+        document.getElementById(`vs-pills-${id}`).classList.add("active")
+        document.getElementById(`v-pills-${id}`).classList.add("show", "active")
+  }
+
+</script>

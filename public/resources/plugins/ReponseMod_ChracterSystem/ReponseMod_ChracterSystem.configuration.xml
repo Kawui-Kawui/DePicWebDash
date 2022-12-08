@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ServerName>Reponse</ServerName>
+  <Logo>https://media.discordapp.net/attachments/959142220366237796/962008357990977626/122.png</Logo>
+  <DiscordWebhookLink>http</DiscordWebhookLink>
+  <IdentityID>5115</IdentityID>
+  <NameLength>10</NameLength>
+  <SurnameLength>10</SurnameLength>
+  <AgeMax>50</AgeMax>
+  <WeightMax>90</WeightMax>
+  <HeightMax>200</HeightMax>
+  <Kayıtlı />
+</Config>

@@ -7,6 +7,7 @@ const userdata = require("../util/models/users_db");
 const dash = require("./dashboard/index");
 const shop = require("./shop/index");
 const order = require("./shop/paymets/index");
+const plugins = require("./plugins/index")
 
 try {
   router.get("/", (req, res) => {
@@ -65,6 +66,7 @@ try {
   });
   router.use("/tienda", shop);
   router.use("/dash", dash);
+  router.use("/plugins", plugins);
 
   router.get("/perfil/:id", async (req, res) => {
     let datauserfind = await userdata.findOne({ id: req.params.id });

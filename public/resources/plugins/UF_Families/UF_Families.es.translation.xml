@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Translations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Translation Id="you_were_invited_into_family" Value="Has sido invitado al grupo {0} de {1}" />
+  <Translation Id="you_invited_player_into_family" Value="Invitastes {0} a {1}" />
+  <Translation Id="you_removed_player_from_family" Value="Te salistes {0} de {1}" />
+  <Translation Id="you_were_removed_from_family" Value="Eres de {0} de {1}" />
+  <Translation Id="use_invite_syntax" Value="Usa {0} para accept o cancel la invitacion" />
+  <Translation Id="you_canceled_invite_request" Value="Cancelastes la invitacion a {0}" />
+  <Translation Id="you_accepted_invite_request" Value="Aceptastes la invitacion a {0}" />
+  <Translation Id="your_invite_request_canceled" Value="Has sido invitado a {0} fue cancelado por {1}" />
+  <Translation Id="your_invite_request_accepted" Value="Has sido invitado {1} fue aceptado por {0}" />
+  <Translation Id="joined_family_notification" Value="{0} Se unio a {1}" />
+  <Translation Id="left_family_notification" Value="{0} Se salio de {1} " />
+  <Translation Id="dont_have_any_family_invite_requests" Value="No tienes ninguna solicitud de invitacion" />
+  <Translation Id="name_not_valid" Value="Ese nombre es invalido" />
+  <Translation Id="avatar_not_valid" Value="Ese avatar es invalido" />
+  <Translation Id="successfully_changed_data" Value="El {0} fue cambiado de tu frupo" />
+  <Translation Id="leader_cant_leave_family" Value="No puedes salirte si eres el lider" />
+  <Translation Id="want_leave_family" Value="Realmente te quieres salir de {0}?" />
+  <Translation Id="want_delete_family" Value="Realmente quieres borrar el grupo {0}?" />
+  <Translation Id="use_to_answer_the_request" Value="Usa /familyrequest [yes|no] para {0} su grupo." />
+  <Translation Id="no_family_management_requests" Value="No tienes solicitud de salir/borrar de su grupo" />
+  <Translation Id="left_family_successful" Value="Te has salido de {0}" />
+  <Translation Id="deleted_family_successful" Value="Has borraro {0}" />
+  <Translation Id="your_family_was_deleted" Value="Tu {0} fue eliminado" />
+  <Translation Id="family_new_level" Value="Felicidades!, Has subido al nivel maximo {0}!" />
+  <Translation Id="family_chat_on" Value="El chat de grupo fue activado, todo mensaje que escribas en AREA lo veran los miembros de tu grupo" />
+  <Translation Id="family_chat_off" Value="El chat de grupo fue desactivado, todo mensaje que escribas en AREA lo veran otros jugadores" />
+  <Translation Id="not_in_family_cant_manage_chat" Value="No puedes desactivar y activar el chat grupal porque no eres de un grupo" />
+  <Translation Id="family_chat_message" Value="[{0} Chat]{1}: {2}" />
+  <Translation Id="you_were_kicked_from_family" Value="Has sido sacado de {0} de {1}" />
+  <Translation Id="was_kicked_from_family" Value="{0} Has sido sacado de tu grupo {1}" />
+  <Translation Id="somebody_is_using_storage" Value="Alguien ya está usando el almacenamiento grupal. Espera a que termine" />
+  <Translation Id="not_enough_money_to_withdraw" Value="No hay dinero para sacar" />
+  <Translation Id="not_enough_money_to_deposit" Value="No tienes dinero para depositar" />
+  <Translation Id="invalid_money_amount" Value="Cantidad invilida de dinero: {0}" />
+  <Translation Id="more_score_to_next_level" Value="Tu grupo a subido de nivel {0} puntuaje, {1} Necesitas para el siguente nivel" />
+  <Translation Id="setting_default_logo" Value="El logo default se a colocado" />
+</Translations>

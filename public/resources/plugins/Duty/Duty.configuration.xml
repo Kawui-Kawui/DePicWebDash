@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DutyConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EnableServerAnnouncer>false</EnableServerAnnouncer>
+  <RemoveDutyOnLogout>true</RemoveDutyOnLogout>
+  <AllowDutyCheck>true</AllowDutyCheck>
+  <MessageColor>red</MessageColor>
+  <SuperAdminPermission>duty.superadmin</SuperAdminPermission>
+  <Groups>
+    <DutyGroups>
+      <GroupID>Administrator</GroupID>
+      <Permission>duty.admin</Permission>
+    </DutyGroups>
+    <DutyGroups>
+      <GroupID>Moderator</GroupID>
+      <Permission>duty.mod</Permission>
+    </DutyGroups>
+    <DutyGroups>
+      <GroupID>Helper</GroupID>
+      <Permission>duty.helper</Permission>
+    </DutyGroups>
+  </Groups>
+</DutyConfiguration>

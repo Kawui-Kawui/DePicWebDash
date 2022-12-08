@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Translations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Translation Id="WordBlacklisted" Value="Dijistes una palabra que no se puede decir" />
+  <Translation Id="ItemBlacklisted" Value="No tienes permiso para lotear eso" />
+  <Translation Id="NameBlacklist" Value="Tu nombre no se puede colocar" />
+  <Translation Id="VehicleBlacklist" Value="Ese vehiculo no lo puedes usar" />
+  <Translation Id="CraftBlacklist" Value="Ese crafteo no lo puedes hacer." />
+</Translations>

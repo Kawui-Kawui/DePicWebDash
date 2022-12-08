@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UconomyConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DatabaseAddress>127.0.0.1</DatabaseAddress>
+  <DatabaseUsername>unturned</DatabaseUsername>
+  <DatabasePassword>password</DatabasePassword>
+  <DatabaseName>unturned</DatabaseName>
+  <DatabaseTableName>uconomy</DatabaseTableName>
+  <DatabasePort>3306</DatabasePort>
+  <InitialBalance>30</InitialBalance>
+  <MoneySymbol>$</MoneySymbol>
+  <MoneyName>Credits</MoneyName>
+  <MessageColor>blue</MessageColor>
+</UconomyConfiguration>

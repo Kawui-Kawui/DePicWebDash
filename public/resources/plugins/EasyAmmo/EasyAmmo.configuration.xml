@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EasyAmmoConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ClipLimit>10</ClipLimit>
+  <UconomySupportEnabled>false</UconomySupportEnabled>
+  <PerBulletCostMultiplier>1</PerBulletCostMultiplier>
+  <ClipLimitEnabled>true</ClipLimitEnabled>
+  <ScaleCostByWeaponDamage>true</ScaleCostByWeaponDamage>
+  <WeaponDamageCostMultiplier>2</WeaponDamageCostMultiplier>
+  <BannedIds>
+    <Id>65535</Id>
+  </BannedIds>
+</EasyAmmoConfig>

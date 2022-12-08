@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TaserPluginConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TaserIds>
+    <taserId>4</taserId>
+    <taserId>100</taserId>
+  </TaserIds>
+  <TaserTime>360</TaserTime>
+</TaserPluginConfiguration>

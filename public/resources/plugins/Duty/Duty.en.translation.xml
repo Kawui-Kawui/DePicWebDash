@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Translations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Translation Id="admin_login_message" Value="{0} has logged on and is now on duty." />
+  <Translation Id="admin_logoff_message" Value="{0} has logged off and is now off duty." />
+  <Translation Id="on_duty_message" Value="{0} is now on duty." />
+  <Translation Id="off_duty_message" Value="{0} is now off duty." />
+  <Translation Id="check_on_duty_message" Value="{0} has confirmed that {1} is on duty." />
+  <Translation Id="check_off_duty_message" Value="{0} has confirmed that {1} is not on duty." />
+  <Translation Id="not_enough_permissions" Value="You do not have the correct permissions to use duty." />
+  <Translation Id="error_unable_checkduty" Value="Unable To Check Duty. Configuration Is Set To Be Disabled." />
+  <Translation Id="error_cplayer_null" Value="Player is not online or his name is invalid." />
+  <Translation Id="error_dc_usage" Value="No argument was specified. Please use &quot;dc &lt;playername&gt;&quot; to check on a player." />
+</Translations>

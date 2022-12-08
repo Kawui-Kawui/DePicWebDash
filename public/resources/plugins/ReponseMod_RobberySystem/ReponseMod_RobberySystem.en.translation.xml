@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Translations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Translation Id="WarningNullUser" Value="&lt;color=red&gt;WARNİNG |&lt;/color&gt; There Is No User Against You" />
+  <Translation Id="WarningGunError" Value="&lt;color=red&gt;WARNİNG |&lt;/color&gt; Must Have Weapon Designated for Coercion" />
+  <Translation Id="SuccessSearch" Value="&lt;color=green&gt;SUCCES |&lt;/color&gt; Successfully Searched" />
+  <Translation Id="Wanted" Value="&lt;color=green&gt;CAUTİON |&lt;/color&gt; Superior Wanted" />
+  <Translation Id="SuccessRob" Value="&lt;color=green&gt;SUCCES |&lt;/color&gt; You Successfully Robbed User!" />
+  <Translation Id="Robbed" Value="&lt;color=green&gt;CAUTİON |&lt;/color&gt; You've been robbed!" />
+  <Translation Id="WarningClamp" Value="&lt;color=green&gt;WARNİNG |&lt;/color&gt; Opposite Player Must Be Handcuffed" />
+</Translations>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Translations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Translation Id="list_usage" Value="/jobs &lt;private | public&gt; &lt;page&gt;" />
+  <Translation Id="join_apply_usage" Value="/jjob &lt;Nombre del trabajo&gt;" />
+  <Translation Id="accept_usage" Value="/ajob &lt;Nombre del jugador&gt;" />
+  <Translation Id="kick_usage" Value="/kjob &lt;Nombre del jugador&gt;" />
+  <Translation Id="admin_usage" Value="/joba &lt;add | remove | clear&gt; &lt;trabajo&gt; &lt;Jugador&gt;" />
+  <Translation Id="format_error" Value="No se puede combertir {0} a numero." />
+  <Translation Id="overflow_error" Value="{0} Es muy grande el numero." />
+  <Translation Id="next_page_notification" Value="Siguiente pagina: &quot;/Jobs {0} {1}&quot;." />
+  <Translation Id="pub_job_notification" Value="{0}" />
+  <Translation Id="priv_job_notification" Value="{0}" />
+  <Translation Id="end_of_list" Value="Es el final de la pagina {0} Trabajos." />
+  <Translation Id="unexistant_page" Value="No esta esa pagina." />
+  <Translation Id="error_already_in_a_job" Value="Ya estas en un trabajo" />
+  <Translation Id="error_already_in_a_job_admin" Value="No se puede tener mas de 2 trbajos" />
+  <Translation Id="error_leader_of_a_job" Value="Eres el jefe de un trabajo y no puedes unirte a otros trabajos" />
+  <Translation Id="error_leader_of_a_job_admin" Value="Ese jugador es el jefe de un trabajo y no puede unirse a otros trabajos." />
+  <Translation Id="error_already_applying" Value="Todavía estás solicitando otro trabajo!" />
+  <Translation Id="error_leader_offline" Value="No se puede enviar la solicitud de {0}, El jefe no esta." />
+  <Translation Id="error_job_not_found" Value="Ese trbajo no existe {0}" />
+  <Translation Id="error_not_in_a_job" Value="Todavía no te has unido a un trabajo" />
+  <Translation Id="error_player_not_applying" Value="Ese jugador no está aplicando a tu trabajo." />
+  <Translation Id="error_invalid_job_in_storage" Value="El trabajo almacenado que el jugador estaba solicitando ya no existe." />
+  <Translation Id="error_not_leader_of_job" Value="No eres el jefe de {0}. Usted no puede aceptar esa solicitud." />
+  <Translation Id="error_player_not_in_job" Value="No se puede quitar al jugador del trabajo {0}." />
+  <Translation Id="error_contact_admin" Value="Se ha producido un error, póngase en contacto con un administrador al respecto." />
+  <Translation Id="notification_quiet_joined_job" Value="Te has unido a {0}." />
+  <Translation Id="notification_quiet_joined_job_admin" Value="{0} Se a unido a {1}." />
+  <Translation Id="notification_global_joined_job" Value="{0} Se a unido a {1}." />
+  <Translation Id="notification_player_applying" Value="{0} quiere unirse a su trabajo." />
+  <Translation Id="notification_applied_to_job" Value="Solicitud enviada para trabajar de {0}." />
+  <Translation Id="notification_left_job" Value="Te salistes de tu trabajo {0}." />
+  <Translation Id="notification_accepted_application" Value="Ha aceptado la solicitud de {0}." />
+  <Translation Id="notification_kicked" Value="Te hecharon del trabajo {0} del trabajo del que es jefe." />
+</Translations>

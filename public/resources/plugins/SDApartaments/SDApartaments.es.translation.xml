@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Translations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Translation Id="YouSale" Value="You selling your house for ${0}. Goverment price was ${1}" />
+  <Translation Id="h_rent" Value="This is rentable house. You will pay for this house everyday" />
+  <Translation Id="h_notrent" Value="This is permament house, but you must pay a tax every hour" />
+  <Translation Id="h_member" Value="You are member of this house and can open this door" />
+  <Translation Id="btn_sale" Value="Cancel sell" />
+  <Translation Id="msg_maxhouses" Value="You already have too much houses!" />
+  <Translation Id="btn_notsale" Value="Start sell" />
+  <Translation Id="rent_suffix" Value=" [RENT]" />
+  <Translation Id="SaleandMember" Value="This house are selling for ${0}, Goverment price was ${1}. But you now a member and can use this house" />
+  <Translation Id="Sale" Value="This house are selling for ${0}, Goverment price was ${1}" />
+  <Translation Id="h_notsell" Value="Goverment cost: ${0} (50% you get for lose tax pay, and 85% you get for sell to goverment)" />
+  <Translation Id="h_sell" Value="You selling this house for ${0}" />
+  <Translation Id="errorconvert" Value="Cost must be &gt; 0 and integer" />
+  <Translation Id="msg_govsell" Value="You sell house for ${0}" />
+  <Translation Id="msg_rentsell" Value="You leave from rent house" />
+  <Translation Id="msg_selling" Value="Now you selling your house" />
+  <Translation Id="msg_notselling" Value="Now you not selling your house" />
+  <Translation Id="msg_nomoney" Value="You don't have enjoy money" />
+  <Translation Id="msg_newsell" Value="NICE! You buy this house" />
+  <Translation Id="msg_newrent" Value="NICE! You rent this house" />
+  <Translation Id="hsa_using" Value="Using: /hsa &lt;addh/addr/remove/removefull/removeowner&gt;" />
+  <Translation Id="hs_using" Value="Using: /hs &lt;members/removemember/addmember/lock&gt;" />
+  <Translation Id="hs_nodoor" Value="This door not have house" />
+  <Translation Id="Members" Value="{0} members" />
+  <Translation Id="dept_good" Value="You paid your dept" />
+  <Translation Id="dept_bad" Value="You don't have money" />
+  <Translation Id="newdept" Value="You need pay {0}$ for house '{1}'" />
+  <Translation Id="lookatdoor" Value="You must look at door" />
+  <Translation Id="hs_addmember" Value="You need to use: /hs addmember &lt;player&gt;" />
+  <Translation Id="hs_removemember" Value="You need to use: /hs removemember &lt;SteamID64&gt;" />
+  <Translation Id="hs_notyour" Value="This is not your house" />
+  <Translation Id="hs_addmember" Value="You need to use: /hs addmember &lt;player&gt;" />
+  <Translation Id="hs_open" Value="You open this door for everyone" />
+  <Translation Id="hs_close" Value="You close this door for everyone" />
+  <Translation Id="hs_members" Value="Members: " />
+  <Translation Id="hs_nomembers" Value="Here no members!" />
+  <Translation Id="hs_notyourmembers" Value="This house dont have that member" />
+  <Translation Id="hs_nomembers" Value="Here no members!" />
+  <Translation Id="hs_added" Value="You add this player to your house" />
+  <Translation Id="hs_removed" Value="You remove this player from your house" />
+  <Translation Id="hs_alreadyadded" Value="This player already member" />
+  <Translation Id="hs_max" Value="This house already have maximum members" />
+  <Translation Id="members_info" Value="{0} members" />
+  <Translation Id="house_info" Value="{0}" />
+  <Translation Id="owner_info" Value="{0} ({1})" />
+  <Translation Id="pay_info" Value="{1}$ ({0}$/day)" />
+  <Translation Id="payrent_info" Value="{0}$/hour" />
+  <Translation Id="gov_info" Value="{0}$" />
+  <Translation Id="cost_info" Value="{0}$" />
+  <Translation Id="cost_info" Value="{0}$" />
+  <Translation Id="members_text" Value="Members count" />
+  <Translation Id="house_text" Value="House name:" />
+  <Translation Id="owner_text" Value="Owner:" />
+  <Translation Id="pay_text" Value="Tax dept:" />
+  <Translation Id="payrent_text" Value="Rent dept:" />
+  <Translation Id="gov_text" Value="Goverment cost:" />
+  <Translation Id="cost_text" Value="Current cost:" />
+  <Translation Id="buy_text" Value="Buy" />
+  <Translation Id="hs_placeholder" Value="Insert your cost" />
+  <Translation Id="btn_selltext" Value="Start selling" />
+  <Translation Id="btn_govselltext" Value="Sell to goverment" />
+  <Translation Id="sellinfo" Value="Sell" />
+  <Translation Id="window" Value="House system" />
+</Translations>

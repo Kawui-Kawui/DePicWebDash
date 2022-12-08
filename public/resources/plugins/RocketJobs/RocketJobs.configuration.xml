@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RocketJobsConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AnnounceJobJoin>false</AnnounceJobJoin>
+  <EnablePlugin>true</EnablePlugin>
+  <PublicJobs>
+    <Jobs>
+      <JobName>Taxi</JobName>
+      <PermissionGroup>Taxi</PermissionGroup>
+    </Jobs>
+    <Jobs>
+      <JobName>Cook</JobName>
+      <PermissionGroup>Cook</PermissionGroup>
+    </Jobs>
+    <Jobs>
+      <JobName>Trader</JobName>
+      <PermissionGroup>Trader</PermissionGroup>
+    </Jobs>
+    <Jobs>
+      <JobName>Farmer</JobName>
+      <PermissionGroup>Farmer</PermissionGroup>
+    </Jobs>
+  </PublicJobs>
+  <PrivateJobs>
+    <PrivateJobs>
+      <JobName>Military</JobName>
+      <PermissionGroup>Military</PermissionGroup>
+      <LeaderPermissionGroup>Military Leader</LeaderPermissionGroup>
+    </PrivateJobs>
+    <PrivateJobs>
+      <JobName>Police</JobName>
+      <PermissionGroup>Police</PermissionGroup>
+      <LeaderPermissionGroup>Police Leader</LeaderPermissionGroup>
+    </PrivateJobs>
+    <PrivateJobs>
+      <JobName>Special Operations</JobName>
+      <PermissionGroup>Spec Ops</PermissionGroup>
+      <LeaderPermissionGroup>Spec Ops Leader</LeaderPermissionGroup>
+    </PrivateJobs>
+    <PrivateJobs>
+      <JobName>Gun Seller</JobName>
+      <PermissionGroup>Guns</PermissionGroup>
+      <LeaderPermissionGroup>Guns Leader</LeaderPermissionGroup>
+    </PrivateJobs>
+  </PrivateJobs>
+</RocketJobsConfiguration>
