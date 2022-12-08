@@ -22,8 +22,8 @@
         <a href="/plugins" class="btn btn-sm btn-light">< Back</a>
         <a href="{{plugin.file}}" class="btn btn-info btn-sm"
             download="{{plugin.name}}.dll">Download</a>
-        <a style="margin-right: 10px;" href="archivo.jpg" class="btn btn-info btn-sm"
-            download="Nombre-del-archivo">Source Code</a>
+        <a style="margin-right: 10px;" class="btn btn-info
+            btn-sm">Source Code</a>
     </div>
     <nav>
 
@@ -43,21 +43,21 @@
         <div class="tab-pane fade" id="nav-{{this.id}}" role="tabpanel"
             aria-labelledby="nav-{{this.id}}-tab" tabindex="0">
             <div style="padding-bottom: 20px;">
-            <h3>{{this.titles.desc}}</h3>
-            {{this.desc}}
+                <h3>{{this.titles.desc}}</h3>
+                {{this.desc}}
             </div>
-            <br >
+            <br>
             <div style="padding-bottom: 20px;">
                 <h3>{{this.titles.config}}</h3>
                 <pre><code class="xml">{{this.config}}</code></pre>
                 <a href="{{this.config_file}}" class="btn btn-info btn-sm"
-            download="Uconomy.configuration.xml">Download</a>
+                    download="Uconomy.configuration.xml">Download</a>
             </div>
             <div>
                 <h3>{{this.titles.translates}}</h3>
                 <pre><code class="xml">{{this.translates}}</code></pre>
                 <a href="{{this.translates_file}}" class="btn btn-info btn-sm"
-            download="{{this.name}}.{{this.id}}.translation.xml">Download</a>
+                    download="{{this.name}}.{{this.id}}.translation.xml">Download</a>
             </div>
         </div>
         {{/each}}
